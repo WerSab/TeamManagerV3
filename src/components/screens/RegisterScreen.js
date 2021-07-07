@@ -12,18 +12,18 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {userActions} from '../../store';
-import Loader from '../screens/Loader';
+import {Picker} from '@react-native-picker/picker';
+import LoginScreen from './LoginScreen';
+import { StackNavigator } from '../navigation/StackNavigator';
 
-const RegisterScreen = ({user, addUser}) => {
+const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
   const [adres, setAdres] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
-  const [isRegistraionSuccess, setIsRegistraionSuccess] = useState(false);
 
   const firstNameRef = createRef();
   const lastNameRef = createRef();
@@ -32,6 +32,8 @@ const RegisterScreen = ({user, addUser}) => {
   const adresRef = createRef();
   const passwordRef = createRef();
 
+  
+
   const clearInputs = () => {
     setFirstName('');
     setLastName('');
@@ -39,6 +41,18 @@ const RegisterScreen = ({user, addUser}) => {
     setAge('');
     setAdres('');
     setPassword('');
+  };
+
+  const setUserToDB = () => {
+    let itemToSet = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      age: age,
+      adres: adres,
+      password: password,
+    };
+    addUser(itemToSet);
   };
 
   const handleSubmitButton = () => {
@@ -69,46 +83,17 @@ const RegisterScreen = ({user, addUser}) => {
       return;
     }
 
-let userSize_1 = user.length;
-console.log(user.length);
+    let userSize_1 = user.length;
+    console.log('Rozmiar bazy',userSize_1);
 
-    //Show Loader
-    setLoading(true);
-    const setUserToDB = () => {
-      let itemToSet = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        age: age,
-        adres: adres,
-        password: password,
-      };
-    addUser(itemToSet);
-    };
+    clearInputs();
+    setUserToDB();
+    navigation.navigate('LoginScreen')
+
   };
 
-
-  if (isRegistraionSuccess) {
-    return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: '#307ecc',
-          justifyContent: 'center',
-        }}>
-        <Text style={styles.successTextStyle}>Registration Successful</Text>
-        <TouchableOpacity
-          style={styles.buttonStyle}
-          activeOpacity={0.5}
-         >
-          <Text style={styles.buttonTextStyle}>Login Now</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
   return (
-    <View style={{flex: 1, backgroundColor: '#2a343f'}}>
-      <Loader loading={loading} />
+    <View style={{flex: 1, backgroundColor: '#1a112b'}}>
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
@@ -164,20 +149,7 @@ console.log(user.length);
               blurOnSubmit={false}
             />
           </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={UserPassword => setPassword(UserPassword)}
-              underlineColorAndroid="#f000"
-              placeholder="Hasło ..."
-              placeholderTextColor="#8b9cb5"
-              ref={passwordRef}
-              returnKeyType="next"
-              secureTextEntry={true}
-              onSubmitEditing={() => ageRef.current && ageRef.current.focus()}
-              blurOnSubmit={false}
-            />
-          </View>
+
           <View style={styles.SectionStyle}>
             <TextInput
               style={styles.inputStyle}
@@ -208,6 +180,21 @@ console.log(user.length);
               blurOnSubmit={false}
             />
           </View>
+          <View style={styles.SectionStyle}>
+            <TextInput
+              style={styles.inputStyle}
+              onChangeText={UserPassword => setPassword(UserPassword)}
+              underlineColorAndroid="#f000"
+              placeholder="Hasło ..."
+              placeholderTextColor="#8b9cb5"
+              ref={passwordRef}
+              returnKeyType="next"
+              secureTextEntry={true}
+              onSubmitEditing={() => ageRef.current && ageRef.current.focus()}
+              blurOnSubmit={false}
+            />
+          </View>
+
           {errortext != '' ? (
             <Text style={styles.errorTextStyle}>{errortext}</Text>
           ) : null}
@@ -215,11 +202,9 @@ console.log(user.length);
             style={styles.buttonStyle}
             activeOpacity={0.5}
             onPress={() => {
-              {handleSubmitButton};
-              clearInputs();
-              setUserToDB();
-            }}>
-           <Text style={styles.buttonTextStyle}>REGISTER</Text>
+              handleSubmitButton();
+               }}>
+            <Text style={styles.buttonTextStyle}>REGISTER</Text>
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </ScrollView>
@@ -232,7 +217,6 @@ const mapState = state => ({
 });
 
 const mapDispatch = dispatch => ({
-  
   addUser: data => dispatch(userActions.addUser(data)),
 });
 
@@ -248,7 +232,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: '#7DE24E',
+    backgroundColor: '#FCA542',
     borderWidth: 0,
     color: '#FFFFFF',
     borderColor: '#7DE24E',

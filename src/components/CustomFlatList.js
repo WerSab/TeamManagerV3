@@ -6,35 +6,33 @@ import {
   FlatList,
   StyleSheet,
   TouchableOpacity,
-  Linking,
+  Modal,
   TextInput,
   Alert,
 } from 'react-native';
 import {connect} from 'react-redux';
 import {turniejeActions} from '../store';
+import {userActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
+import CustomFlatList_team from './CustomFlatList_team';
 
 const CustomFlatList = ({
   //propsy do flatlisty
   data,
   category,
-  backgroundColor,
-  textColor,
   deleteElement,
   withSearchbar,
+  user,
 }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [flatListData, setFlatListData] = useState(data);
   const [searchInputValue, setSearchInputValue] = useState('');
 
   const deleteAlert = (id, name) => {
-    Alert.alert(
-      "Delete alert",
-      `Do You want to delete ${name}?`,
-      [
-        { text: 'Cancel', onPress: () => console.log('Cancel Pressed') },
-        { text: 'Ok', onPress: () => deleteElement(id) },
-      ]
-    )
+    Alert.alert('Delete alert', `Do You want to delete ${name}?`, [
+      {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
+      {text: 'Ok', onPress: () => deleteElement(id)},
+    ]);
   };
 
   const renderSearchBar = () => {
@@ -66,59 +64,120 @@ const CustomFlatList = ({
   };
   const renderItem = element => {
     return (
-      <View style={styles.itemContainer} key={element.id.toString()}>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={[styles.buttonID]}>
-          <Text numberOfLines={1} style={[styles.date]}>
-            {element.id}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.buttonDate]}>
-          <Text numberOfLines={1} style={[styles.date]}>
-            {element.date}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={styles.buttonCity}>
-          <Text numberOfLines={1} style={[styles.city, {color: textColor}]}>
-            {element.city}
-          </Text>
-        </TouchableOpacity>
+      <>
+        <View style={styles.button} key={element.id.toString()}>
+          <View style={styles.buttonBig}>
+            <TouchableOpacity
+              style={styles.buttonBreakHeight}></TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
+            <TouchableOpacity style={styles.name}>
+              <Text numberOfLines={1} style={[styles.textStyleBig]}>
+                {element.name}
+              </Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => Linking.openURL(element.link)}
-          style={styles.nameContainer}>
-          <Text numberOfLines={1} style={[styles.name, {color: textColor}]}>
-            {element.name}
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonBreakHeight}></TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => deleteAlert(element.id, element.name)}
-          style={styles.imageContainer}>
-          <Image source={deleteIcon} style={styles.icon} />
-        </TouchableOpacity>
-      </View>
+            <TouchableOpacity style={styles.buttonSmall}>
+              <Text numberOfLines={1} style={[styles.textStyle]}>
+                {element.date}
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.buttonBreakHeight}></TouchableOpacity>
+
+            <TouchableOpacity style={styles.buttonSmall}>
+              <Text numberOfLines={1} style={[styles.textStyle]}>
+                {element.city}
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.buttonBreakHeight}></TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => deleteAlert(element.id, element.name)}
+              style={styles.button}>
+              <Image source={deleteIcon} style={styles.icon} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.buttonBig}>
+            <TouchableOpacity
+              style={styles.buttonCity}
+              onPress={() => setIsModalVisible(true)}>
+              <Text style={styles.textStyleSmall}>Zawodnicy</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </>
     );
   };
+
   return (
-    //return do flatListy
-    <View style={[{backgroundColor: backgroundColor}, styles.container]}>
+    <View style={styles.container}>
+      {isModalVisible && (
+        <Modal
+          animationType="slide"
+          transparent={true}
+          onRequestClose={() => setIsModalVisible(false)}
+          onBackdropPress={() => setIsModalVisible(false)}
+          onBackButtonPress={() => setIsModalVisible(false)}>
+          <View style={styles.centeredView}>
+            <TouchableOpacity>
+              <Text style={styles.textStyleBig}>Lista Zawodników</Text>
+
+              <CustomFlatList_team
+                data={user}
+                category="Zawodnik"
+                borderRadius="20"
+                backgroundColor="white"
+                textColor="white"
+                withSearchbar={false}
+              />
+             <View style={styles.buttonRow}>
+              <TouchableOpacity
+                style={styles.buttonClose}
+                onPress={() => {
+                  setIsModalVisible(!isModalVisible);
+                }}>
+                <Text style={styles.textButton}>Close</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                  style={styles.buttonSafe}
+                  onPress={() => {
+                    setIsModalVisible(!isModalVisible);
+                    clearInputs();
+                    setPlayersToDB();
+                  }}>
+                  <Text style={styles.textButton}>Safe</Text>
+            </TouchableOpacity>
+            </View>
+            </TouchableOpacity>
+            
+          </View>
+        </Modal>
+      )}
+
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}
         category={category}
         renderItem={({item}) => renderItem(item)} //do renderItem przekazujemy wartośc funkcji renderItem
         keyExtractor={(item, index) => index.toString()}
-        style={{flex: 1}}
+        style={{flex: 2}}
         withSearchbar={true}
       />
     </View>
   );
 };
+
+const mapState = state => ({
+  user: state.user,
+});
 
 const mapDispatch = dispatch => ({
   deleteElement: id => dispatch(turniejeActions.deleteElement(id)),
@@ -126,39 +185,61 @@ const mapDispatch = dispatch => ({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 10,
-    flex: 4,
+
+    flex: 2,
+    justifyContent: 'center',
     width: '100%',
+    backgroundColor: 'white',
   },
   itemContainer: {
-    flexDirection: 'row',
-    flex: 6,
+    flexDirection: 'column',
+    flex: 2,
+    justifyContent: 'center',
     paddingVertical: 5,
     paddingHorizontal: 5,
     width: '100%',
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    width: '90%',
+    marginLeft: 4,
   },
   nameContainer: {
     flexBasis: '50%',
     backgroundColor: '#2a343f',
     borderRadius: 5,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
   imageContainer: {
     flexBasis: '10%',
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
-  button: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 90,
-  },
+
   buttonBreak: {
     width: 6,
   },
+  buttonRow: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-evenly',
+  },
+
+  buttonCity: {
+    borderRadius: 5,
+    paddingVertical: -5,
+    paddingHorizontal: -5,
+    elevation: 1,
+    width: '100%',
+    backgroundColor: '#FCA542',
+    justifyContent: 'flex-end',
+  },
+  buttonBreakHeight: {
+    height: 8,
+  },
+
   buttonJoin: {
     borderRadius: 5,
     paddingVertical: 1,
@@ -177,32 +258,74 @@ const styles = StyleSheet.create({
     elevation: 2,
     width: 55,
     backgroundColor: '#32fc05',
-    justifyContent: 'flex-end',
   },
-  buttonDate: {
-    backgroundColor: 'white',
-    justifyContent: 'flex-end',
-    width: 60,
-  },
-  buttonID: {
-    backgroundColor: 'white',
-    justifyContent: 'flex-end',
-    width: 20,
-    borderRadius: 5,
-  },
-  buttonCity: {
-    borderRadius: 5,
+
+  button: {
+    flexDirection: 'row',
+    borderRadius: 10,
     paddingVertical: -5,
     paddingHorizontal: -5,
     elevation: 1,
-    width: 50,
-    backgroundColor: '#b20505',
-    justifyContent: 'flex-end',
+    width: '100%',
+    backgroundColor: '#eeedef',
+    justifyContent: 'space-between',
   },
+  buttonSmall: {
+    flexDirection: 'row',
+    borderRadius: 10,
+    paddingVertical: -5,
+    paddingHorizontal: -5,
+    elevation: 1,
+    width: '100%',
+    backgroundColor: '#eeedef',
+    justifyContent: 'space-between',
+  },
+
+  buttonBig: {
+    flexDirection: 'column',
+    borderRadius: 10,
+    paddingVertical: -5,
+    paddingHorizontal: -5,
+    elevation: 1,
+    width: '50%',
+    backgroundColor: '#eeedef',
+    justifyContent: 'space-between',
+  },
+  buttonHeader: {
+    flexDirection: 'column',
+    borderRadius: 10,
+    paddingVertical: -5,
+    paddingHorizontal: -5,
+    elevation: 1,
+    width: '50%',
+    backgroundColor: '#0e072b',
+    justifyContent: 'space-between',
+  },
+  
   textStyle: {
-    color: 'black',
-    fontSize: 12,
+    color: '#939096',
+    fontSize: 15,
     fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  textStyleBig: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  textStyleBigWhite: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  textStyleSmall: {
+    color: 'black',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   date: {
     color: 'black',
@@ -211,7 +334,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   name: {
-    fontSize: 12,
+    fontSize: 15,
+    color: 'black',
     letterSpacing: 1,
     paddingHorizontal: 5,
   },
@@ -227,5 +351,38 @@ const styles = StyleSheet.create({
     width: 20,
     justifyContent: 'flex-end',
   },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+  }},
+  buttonClose: {
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    //elevation: 2,
+    width: 120,
+    backgroundColor: '#CCCCCC',
+  },
+  buttonSafe: {
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    //elevation: 2,
+    width: 120,
+    backgroundColor: '#FCA542',
+  },
+  textButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
-export default connect(null, mapDispatch)(CustomFlatList);
+export default connect(mapState, mapDispatch)(CustomFlatList);

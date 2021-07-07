@@ -20,6 +20,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [nameInput, setNameInput] = useState('');
   const [dateInput, setDateInput] = useState('');
+  const [hourInput, setHourInput] = useState('');
   const [cityInput, setCityInput] = useState('');
   const [linkInput, setLinkInput] = useState('');
   const [selectedValue, setSelectedValue] = useState('Turniej');
@@ -27,6 +28,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
   const clearInputs = () => {
     setNameInput('');
     setDateInput('');
+    setHourInput('');
     setCityInput('');
     setLinkInput('');
 
@@ -37,6 +39,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
       id: turnieje.length,
       category: selectedValue,
       date: dateInput,
+      hour: hourInput,
       name: nameInput,
       city: cityInput,
       link: linkInput,
@@ -75,6 +78,12 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
                 onChangeText={setDateInput}
                 value={dateInput}
                 placeholder="Termin..."
+              />
+              <TextInput
+                style={styles.input}
+                onChangeText={setHourInput}
+                value={hourInput}
+                placeholder="Godzina..."
               />
               <TextInput
                 style={styles.input}
@@ -122,19 +131,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           </Modal>
         )}
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-            <Image style={styles.icon} source={moreIcon} />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={styles.textTeam}>Turnieje</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => setIsModalVisible(true)}>
-            <Image style={styles.icon} source={addIcon} />
-          </TouchableOpacity>
-        </View>
+        
 
         <CustomFlatList
           data={turnieje}
@@ -145,6 +142,19 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           withSearchbar={true}
         />
       </View>
+      <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+            <Image style={styles.icon} source={moreIcon} />
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Text style={styles.textTeam}> </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+            <Image style={styles.icon} source={addIcon} />
+          </TouchableOpacity>
+        </View>
     </>
   );
 };
@@ -164,9 +174,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#33383C',
+    backgroundColor: '#1a112b',
     width: '100%',
-    borderRadius: 10,
+    
   },
   buttonLogo: {
     flexDirection: 'row',
@@ -213,7 +223,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#CCCCCC',
   },
   buttonSafe: {
-    backgroundColor: '#94B444',
+    backgroundColor: '#FCA542',
   },
   textStyle: {
     color: 'white',

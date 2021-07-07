@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import userActions from '../store';
 let data = [
   {
     category: 'turniej',
@@ -6,7 +7,20 @@ let data = [
     date: '29.05 - 27.06.2021',
     name: 'III Liga Małopolska seniorów 2021',
     city: 'Kraków',
-    link: 'http://www.chessarbiter.com/turnieje/2021/tdr_1045/',
+    playersId: [
+      {
+        id: 1
+      }, 
+      {
+        id: 2,
+      }, 
+      {
+        id: 3,
+      }, 
+      {
+        id: 4,
+      }, 
+    ],
   },
 
   {
@@ -15,7 +29,20 @@ let data = [
     date: '10.07.2021',
     name: 'III Otwarty Całoroczny Turniej Juniorów i Seniorów',
     city: 'Myślibórz',
-    link: 'http://www.chessarbiter.com/turnieje/2021/ti_245/',
+    playersId: [
+      {
+        id: 1
+      }, 
+      {
+        id: 2,
+      }, 
+      {
+        id: 3,
+      }, 
+      {
+        id: 4,
+      }, 
+    ],
   },
   {
     category: 'turniej',
@@ -23,7 +50,20 @@ let data = [
     date: '18.07.2021',
     name: 'I Mistrzostwa w szachach szybkich w Skwierzynie',
     city: 'Skwierzyna',
-    link: 'http://www.chessarbiter.com/turnieje/2021/tdr_1045/',
+    playersId: [
+      {
+        id: 1
+      }, 
+      {
+        id: 2,
+      }, 
+      {
+        id: 3,
+      }, 
+      {
+        id: 4,
+      }, 
+    ],
   },
   {
     category: 'liga',
@@ -31,7 +71,20 @@ let data = [
     date: '18.07.2021',
     name: 'Zawody szachowe dla przedszkolaków',
     city: 'Skwierzyna',
-    link: 'http://www.chessarbiter.com/turnieje/2021/tdr_1045/',
+    playersId: [
+      {
+        id: 1
+      }, 
+      {
+        id: 2,
+      }, 
+      {
+        id: 3,
+      }, 
+      {
+        id: 4,
+      }, 
+    ],
   },
 ];
 

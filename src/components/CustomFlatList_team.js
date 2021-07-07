@@ -14,214 +14,132 @@ import {connect} from 'react-redux';
 import {userActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
 
-const CustomFlatList_Team = ({
-  //propsy do flatlisty
+const CustomFlatList_team = ({
   data,
   category,
-  backgroundColor,
-  textColor,
-  deleteUser,
-  withSearchbar,
+  deleteElement,
+  withSearchbar
 }) => {
-  const [flatListData, setFlatListData] = useState(data);
-  const [searchInputValue, setSearchInputValue] = useState('');
 
-  const deleteAlert = (id, name) => {
-    Alert.alert('Delete alert', `Do You want to delete ${name}?`, [
-      {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
-      {text: 'Ok', onPress: () => deleteUser(id)},
-    ]);
+  const [flatListData, setFlatListData] = useState(data)
+  const [searchInputValue, setSearchInputValue] = useState('')
+
+  const deleteAlert = (id, lastName) => {
+    Alert.alert(
+      "Delete alert",
+      `Do You want to delete ${lastName}?`,
+      [
+        { text: 'Cancel', onPress: () => console.log('Cancel Pressed') },
+        { text: 'Ok', onPress: () => deleteElement(id) },
+      ]
+    )
   };
 
   const renderSearchBar = () => {
-    //formularz wyszukiwania
     return (
-      //return do searchBaru
-      <TextInput
-        inlineImageLeft="search_icon"
+      <TextInput inlineImageLeft="search_icon"
         inlineImagePadding={5}
         clearButtonMode="while-editing"
         value={searchInputValue}
         onChangeText={text => {
-          searchFilterFunction(text); //podpięta funkcja wyszukiwania
+          searchFilterFunction(text)
         }}
         placeholder="Wyszukaj..."
-        placeholderTextColor="gray"
-      />
-    );
-  };
-  const searchFilterFunction = text => {
-    //funkcja wyszukiwania
+        placeholderTextColor="gray" 
+        />
+       
+    )
+  }
+
+  const searchFilterFunction = (text) => {
     const newData = data?.filter(item => {
-      const itemData = item.name.toLowerCase().trim(); //zamian tekstu na małe litery
-      const textData = text.toLowerCase();
-      return itemData.includes(textData);
-    });
+      const itemData = item.name.toLowerCase().trim()
+      const textData = text.toLowerCase()
+      return itemData.includes(textData)
+    })
     setSearchInputValue(text);
-    setFlatListData(newData);
-  };
+    setFlatListData(newData)
+  }
+
   const renderItem = element => {
     return (
-      <View style={styles.itemContainer} key={element.id.toString()}>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={[styles.buttonID]}>
-          <Text numberOfLines={1} style={[styles.date]}>
+      
+      <View style={styles.container} key={element.id.toString()}>
+        
+        <TouchableOpacity>
+          <Text numberOfLines={1} style={styles.text}>
             {element.id}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.buttonDate]}>
-          <Text numberOfLines={1} style={[styles.date]}>
+         <TouchableOpacity>
+          <Text numberOfLines={1} style={styles.text}>
             {element.firstName}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-        <TouchableOpacity style={styles.buttonCity}>
-          <Text numberOfLines={1} style={[styles.city, {color: textColor}]}>
-            {element.secondName}
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.buttonBreak}></TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => Linking.openURL(element.link)}
-          style={styles.nameContainer}>
-          <Text numberOfLines={1} style={[styles.name, {color: textColor}]}>
-            {element.email}
+        <TouchableOpacity>
+          <Text numberOfLines={1} style={styles.text}>
+            {element.lastName}
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => deleteAlert(element.id, element.lastName)}
-          style={styles.imageContainer}>
+          style={styles.image}>
           <Image source={deleteIcon} style={styles.icon} />
         </TouchableOpacity>
       </View>
+     
     );
   };
+
   return (
-    //return do flatListy
-    <View style={[{backgroundColor: backgroundColor}, styles.container]}>
+    <View style={ styles.container}>
+      {/* gdybyśmy wyrenderowali to jako ListHeaderComponent to by nam się za każdą literką przeładowywało */}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}
         category={category}
-        renderItem={({item}) => renderItem(item)} //do renderItem przekazujemy wartośc funkcji renderItem
+        // ListHeaderComponent={renderSearchBar || null}
+        renderItem={({ item }) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
-        style={{flex: 1}}
-        withSearchbar={true}
+        style={{ flex: 1 }}
       />
     </View>
   );
 };
 
 const mapDispatch = dispatch => ({
-  deleteUser: id => dispatch(userActions.deleteUser(id)),
+  deleteElement: id => dispatch(userActions.deleteElement(id)),
 });
-
 const styles = StyleSheet.create({
-  container: {
-    borderRadius: 10,
-    flex: 4,
-    width: '100%',
-  },
-  itemContainer: {
+  container:{
+    flex:1,
     flexDirection: 'row',
-    flex: 6,
-    paddingVertical: 5,
-    paddingHorizontal: 5,
-    width: '100%',
-  },
-  nameContainer: {
-    flexBasis: '50%',
-    backgroundColor: '#2a343f',
-    borderRadius: 5,
-    justifyContent: 'flex-end',
-  },
-  imageContainer: {
-    flexBasis: '10%',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  button: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 90,
-  },
-  buttonBreak: {
-    width: 6,
-  },
-  buttonJoin: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 30,
-    backgroundColor: '#f8fc05',
-    justifyContent: 'flex-end',
-  },
-  buttonConfirm: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 55,
-    backgroundColor: '#32fc05',
-    justifyContent: 'flex-end',
-  },
-  buttonDate: {
-    backgroundColor: 'white',
-    justifyContent: 'flex-end',
-    width: 60,
-  },
-  buttonID: {
-    backgroundColor: 'white',
-    justifyContent: 'flex-end',
-    width: 20,
-    borderRadius: 5,
-  },
-  buttonCity: {
-    borderRadius: 5,
+    borderRadius: 10,
     paddingVertical: -5,
     paddingHorizontal: -5,
-    elevation: 1,
-    width: 50,
-    backgroundColor: '#b20505',
-    justifyContent: 'flex-end',
+    width: '100%',
+    backgroundColor: '#eeedef',
+    justifyContent: 'space-between',
   },
-  textStyle: {
+
+  text:{
     color: 'black',
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: 'bold',
-  },
-  date: {
-    color: 'black',
-    fontSize: 12,
-    fontWeight: '200',
     textAlign: 'center',
   },
-  name: {
-    fontSize: 12,
-    letterSpacing: 1,
-    paddingHorizontal: 5,
-  },
 
-  city: {
-    fontSize: 12,
-    letterSpacing: 1,
-    paddingHorizontal: 1,
-  },
-
-  icon: {
+  image:{
     height: 20,
     width: 20,
     justifyContent: 'flex-end',
   },
+  icon:{
+    height: 20,
+    width: 20,
+    justifyContent: 'flex-end',
+  },
+  
 });
-export default connect(null, mapDispatch)(CustomFlatList_Team);
+export default connect(null, mapDispatch)(CustomFlatList_team);
