@@ -3,7 +3,7 @@ import userActions from '../store';
 let data = [
   {
     category: 'turniej',
-    id: 0,
+    id: 1,
     date: '29.05 - 27.06.2021',
     name: 'III Liga Małopolska seniorów 2021',
     city: 'Kraków',
@@ -25,7 +25,7 @@ let data = [
 
   {
     category: 'turniej',
-    id: 1,
+    id: 2,
     date: '10.07.2021',
     name: 'III Otwarty Całoroczny Turniej Juniorów i Seniorów',
     city: 'Myślibórz',
@@ -46,7 +46,7 @@ let data = [
   },
   {
     category: 'turniej',
-    id: 2,
+    id: 3,
     date: '18.07.2021',
     name: 'I Mistrzostwa w szachach szybkich w Skwierzynie',
     city: 'Skwierzyna',
@@ -67,7 +67,7 @@ let data = [
   },
   {
     category: 'liga',
-    id: 2,
+    id: 4,
     date: '18.07.2021',
     name: 'Zawody szachowe dla przedszkolaków',
     city: 'Skwierzyna',

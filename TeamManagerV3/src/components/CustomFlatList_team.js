@@ -15,25 +15,22 @@ import {
 import { connect } from 'react-redux';
 import { userActions } from '../store';
 import { turniejeActions } from '../store';
+import SelctableTurniejeList from './SelctableTurniejeList';
 import deleteIcon from '../../assets/icons/delete.png/';
 
 const CustomFlatList_team = ({
   data,
-  category,
-  id,
-  deleteElement,
-  selectedItem,
-  clearItems,
-  withSearchbar,
-  user,
   turnieje,
+  category,
+  deleteElement,
+  withSearchbar,
 }) => {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [flatListData, setFlatListData] = useState(data)
   const [playerListData, setPlayerListData] = useState(data)
   const [searchInputValue, setSearchInputValue] = useState('')
-  const [selectInputValue, setSelectInputValue] = useState('')
+
 
   const deleteAlert = (id, lastName) => {
     Alert.alert(
@@ -91,9 +88,6 @@ const CustomFlatList_team = ({
           setIsModalVisible(true)
           PlayerCard(item.id)
         }}>
-
-
-
           <Text numberOfLines={1} style={styles.text}>
             {item.id}  {item.firstName}  {item.lastName}
           </Text>
@@ -105,15 +99,6 @@ const CustomFlatList_team = ({
           style={styles.image}>
           <Image source={deleteIcon} style={styles.icon} />
         </TouchableOpacity>
-
-        <View style={styles.buttonBig}>
-          <TouchableOpacity
-            style={styles.buttonCity}>
-            <Text style={styles.textStyleSmall}>Zawodnicy</Text>
-          </TouchableOpacity>
-
-        </View>
-
       </View>
 
     );
@@ -139,6 +124,21 @@ const CustomFlatList_team = ({
                 keyExtractor={(item, index) => index.toString()}
                 style={{ flex: 1 }}
               />
+
+              <TouchableOpacity>
+                <Text numberOfLines={1} style={styles.text}> Dodaj turniej</Text>
+                <SelctableTurniejeList
+                data={turnieje}
+                borderRadius="20"
+                backgroundColor="white"
+                textColor="white"
+              />
+             
+              </TouchableOpacity>
+
+
+             
+
               <View style={styles.buttonRow}>
                 <TouchableOpacity
                   style={styles.buttonClose}
