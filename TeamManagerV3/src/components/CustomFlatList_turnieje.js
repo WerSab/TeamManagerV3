@@ -14,9 +14,10 @@ import {connect} from 'react-redux';
 import {turniejeActions} from '../store';
 import {userActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
+import addIcon from '../../assets/icons/add.png/';
 import CustomFlatList_team from './CustomFlatList_team';
 
-const CustomFlatList = ({
+const CustomFlatList_turnieje = ({
   //propsy do flatlisty
   data,
   category,
@@ -62,17 +63,17 @@ const CustomFlatList = ({
     setSearchInputValue(text);
     setFlatListData(newData);
   };
-  const renderItem = element => {
+  const renderItem = item => {
     return (
       <>
-        <View style={styles.button} key={element.id.toString()}>
+        <View style={styles.button} key={item.id.toString()}>
           <View style={styles.buttonBig}>
             <TouchableOpacity
               style={styles.buttonBreakHeight}></TouchableOpacity>
 
             <TouchableOpacity style={styles.name}>
               <Text numberOfLines={1} style={[styles.textStyleBig]}>
-                {element.name}
+                {item.name}
               </Text>
             </TouchableOpacity>
 
@@ -81,7 +82,7 @@ const CustomFlatList = ({
 
             <TouchableOpacity style={styles.buttonSmall}>
               <Text numberOfLines={1} style={[styles.textStyle]}>
-                {element.date}
+                {item.date}
               </Text>
             </TouchableOpacity>
 
@@ -90,7 +91,7 @@ const CustomFlatList = ({
 
             <TouchableOpacity style={styles.buttonSmall}>
               <Text numberOfLines={1} style={[styles.textStyle]}>
-                {element.city}
+                {item.city}
               </Text>
             </TouchableOpacity>
 
@@ -98,17 +99,9 @@ const CustomFlatList = ({
               style={styles.buttonBreakHeight}></TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => deleteAlert(element.id, element.name)}
+              onPress={() => deleteAlert(item.id, item.name)}
               style={styles.button}>
               <Image source={deleteIcon} style={styles.icon} />
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.buttonBig}>
-            <TouchableOpacity
-              style={styles.buttonCity}
-              onPress={() => setIsModalVisible(true)}>
-              <Text style={styles.textStyleSmall}>Zawodnicy</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -134,7 +127,7 @@ const CustomFlatList = ({
                 category="Zawodnik"
                 borderRadius="20"
                 backgroundColor="white"
-                textColor="white"
+                textColor="black"
                 withSearchbar={false}
               />
              <View style={styles.buttonRow}>
@@ -385,4 +378,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-export default connect(mapState, mapDispatch)(CustomFlatList);
+export default connect(mapState, mapDispatch)(CustomFlatList_turnieje);

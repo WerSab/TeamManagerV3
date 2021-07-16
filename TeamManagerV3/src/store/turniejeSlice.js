@@ -111,4 +111,3 @@ const turniejeSlice = createSlice({
 });
 
 export default turniejeSlice;
-
