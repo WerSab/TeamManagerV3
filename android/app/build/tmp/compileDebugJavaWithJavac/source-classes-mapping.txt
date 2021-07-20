@@ -1,0 +1,14 @@
+com/teammanagerv3/MainActivity.java
+ com.teammanagerv3.MainActivity
+com/teammanagerv3/BuildConfig.java
+ com.teammanagerv3.BuildConfig
+com/teammanagerv3/MainApplication.java
+ com.teammanagerv3.MainApplication
+ com.teammanagerv3.MainApplication$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/teammanagerv3/ReactNativeFlipper.java
+ com.teammanagerv3.ReactNativeFlipper
+ com.teammanagerv3.ReactNativeFlipper$1
+ com.teammanagerv3.ReactNativeFlipper$2
+ com.teammanagerv3.ReactNativeFlipper$2$1

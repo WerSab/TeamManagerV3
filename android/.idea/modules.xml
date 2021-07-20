@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TeamManagerV3.iml" filepath="$PROJECT_DIR$/.idea/modules/TeamManagerV3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TeamManagerV3.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TeamManagerV3.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-410759645/TeamManagerV3.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-410759645/TeamManagerV3.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1959237407/TeamManagerV3.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/1959237407/TeamManagerV3.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1673659243/TeamManagerV3.react-native-community_toolbar-android.iml" filepath="$PROJECT_DIR$/.idea/modules/-1673659243/TeamManagerV3.react-native-community_toolbar-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1933744479/TeamManagerV3.react-native-date-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/1933744479/TeamManagerV3.react-native-date-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1549770088/TeamManagerV3.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1549770088/TeamManagerV3.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1166607053/TeamManagerV3.react-native-picker_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/1166607053/TeamManagerV3.react-native-picker_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1406731132/TeamManagerV3.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-1406731132/TeamManagerV3.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1108280607/TeamManagerV3.react-native-restart.iml" filepath="$PROJECT_DIR$/.idea/modules/-1108280607/TeamManagerV3.react-native-restart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1675965697/TeamManagerV3.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1675965697/TeamManagerV3.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-531778983/TeamManagerV3.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-531778983/TeamManagerV3.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>

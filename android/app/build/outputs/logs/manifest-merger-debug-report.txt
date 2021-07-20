@@ -1,0 +1,313 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+MERGED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+MERGED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:8:1-18:12
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9db5af676eb0be5d0fe02f42a825a78c\jetified-flipper-network-plugin-0.75.1\AndroidManifest.xml:8:1-15:12
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ea7487c2f19a38a7913f869fba16e75a\jetified-flipper-fresco-plugin-0.75.1\AndroidManifest.xml:8:1-15:12
+MERGED from [:react-native-async-storage_async-storage] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_masked-view] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_toolbar-android] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\toolbar-android\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-picker_picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-date-picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-gesture-handler] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-restart] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-restart\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-safe-area-context] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-screens] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.react:react-native:0.64.2] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\478164317e47c3d60c1bd38d0160dc74\jetified-react-native-0.64.2\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\82ae702ce6452c85bbcde570c36bca5b\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\b9ac4dfec76d41d25d49aba686953f78\jetified-android-jsc-r245459\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-reanimated\android\build\.transforms\c31b7a9092b110438140d8bde0dd91a5\jetified-react-native-reanimated-64-jsc\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:flipper:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\693d1bc1cdd21c3a786afc63a2b948c3\jetified-flipper-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:stetho:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\a71452c98a089110d40897148eadcb97\jetified-stetho-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fresco:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\24db657e747d87ebda49c14dd6bd6143\jetified-fresco-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f9c3befe509f9a5eebe9d59377238569\jetified-drawee-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\454efdb5da2b8f5e4bcb62cc7de8bbc5\jetified-nativeimagefilters-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:memory-type-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92927383e5a50b6c9a235f6c35d55208\jetified-memory-type-native-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:memory-type-java:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d2e9c93ef848aa5b09756eae708d5cca\jetified-memory-type-java-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\74945ff4e4cd238a097a96663ba51864\jetified-imagepipeline-native-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:soloader:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92ae1dbc0b4094317089151adb712840\jetified-soloader-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1cd3937e0e3ced80e38473f82c6e7d9a\jetified-soloader-0.10.1\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d8cd38b00373fe5fa3709d96e5862d5f\material-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1632d70b3da5d55404b67e0cbd7d43bf\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\83226a6783310930d3e260ad2e517563\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5f97a1bc41f8d2940b4f4620a82d2295\jetified-imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3c764d2b6cc0c1cd12cda281b4537b0b\jetified-memory-type-ashmem-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\93c9a275f97aad163b14c1c59d9b045c\jetified-imagepipeline-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8000845c24a1ab415a33323fb8ac6621\jetified-nativeimagetranscoder-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\6e920fd6d6ee6a5c3cdefc3869b51d3e\jetified-imagepipeline-base-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\842bf2f9cbde442e7f67ce12c7844224\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\62ecce35880984b0c138ce475dc962aa\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4a7e3a6a5b12d48699851e0cd7ae034e\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8689124caa1430799f02cb459f46e2da\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3382c5b564774ccaff499b19fd9cada8\fragment-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\52af9bb131e0a20092265842e485c08f\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\63d693d6393609dd312217953d27b75c\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\291b0dc121fa3d21c4d609cf60748a6c\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\54a6463602e092e46e6a3bac5a75d6f2\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\04dc713a4b52bfe7bc8b2f78befb8bd1\jetified-activity-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\e1e987c088abb64cb98086af7cc51c67\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\dfb7ac91904b3c5a9d1a67aa3c159bd7\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\da24100bb264bf73e5dde9fdbea460b1\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ad21947eec5ee398f5c283b0c4da9784\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3d3b0751e6f78ff8c1df2664b2714ed8\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\2927feeeb42b4fc86dbd2dd84012b8b1\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4b3912fc93bd609a8bcd6b9553a912b6\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f4cb9c7d93882f34a3725527850d73a1\jetified-lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc547a46cd4534ed3e68d96227c7069\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc35db89de5b085067c1324b8bfbbcf\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3614be1ff0fe680b43a404a69c35dcfe\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc0c8a66a760b49fb5235fd8b1759370\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3eec0492784393c9e1fd138d70bf69db\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc10db4bca25ee5a43a6ea2eda221423\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5de14670e80ac28f28052413a4a35127\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.henninghall.android:NumberPickerView:1.1.5] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5009d18516fcb0bcbb208b8508eda2ee\jetified-NumberPickerView-1.1.5\AndroidManifest.xml:2:1-11:12
+MERGED from [net.time4j:time4j-android:4.2-2018i] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\af5f43e05e1e115667fb5b98463ce5d7\jetified-time4j-android-4.2-2018i\AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.fresco:fbcore:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\11a0cbd29e171c364377114a9f368b18\jetified-fbcore-2.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:ui-common:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\600f275462c0a479e210f696cc1ad20a\jetified-ui-common-2.2.0\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:2:1-13:12
+	package
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:2:3-30
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:2:3-30
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:1-25:12
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:15:5-67
+MERGED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from [com.facebook.react:react-native:0.64.2] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\478164317e47c3d60c1bd38d0160dc74\jetified-react-native-0.64.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.64.2] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\478164317e47c3d60c1bd38d0160dc74\jetified-react-native-0.64.2\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1cd3937e0e3ced80e38473f82c6e7d9a\jetified-soloader-0.10.1\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1cd3937e0e3ced80e38473f82c6e7d9a\jetified-soloader-0.10.1\AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d8cd38b00373fe5fa3709d96e5862d5f\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d8cd38b00373fe5fa3709d96e5862d5f\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4b3912fc93bd609a8bcd6b9553a912b6\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4b3912fc93bd609a8bcd6b9553a912b6\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [net.time4j:time4j-android:4.2-2018i] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\af5f43e05e1e115667fb5b98463ce5d7\jetified-time4j-android-4.2-2018i\AndroidManifest.xml:11:5-20
+MERGED from [net.time4j:time4j-android:4.2-2018i] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\af5f43e05e1e115667fb5b98463ce5d7\jetified-time4j-android-4.2-2018i\AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:8:7-39
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:8:7-39
+	tools:ignore
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:10:9-48
+	android:roundIcon
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:10:7-52
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:10:7-52
+	tools:targetApi
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:9:9-29
+	android:icon
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:9:7-41
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:9:7-41
+	android:allowBackup
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:11:7-34
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:12:7-38
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:12:7-38
+	android:usesCleartextTraffic
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:8:9-44
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:7:7-38
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:7:7-38
+activity#com.teammanagerv3.MainActivity
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:13:7-23:18
+	android:label
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:15:9-41
+	android:launchMode
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:17:9-40
+	android:windowSoftInputMode
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:18:9-51
+	android:configChanges
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:16:9-86
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:19:9-22:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:20:13-65
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:20:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:21:13-73
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml:21:23-70
+uses-sdk
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9db5af676eb0be5d0fe02f42a825a78c\jetified-flipper-network-plugin-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9db5af676eb0be5d0fe02f42a825a78c\jetified-flipper-network-plugin-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ea7487c2f19a38a7913f869fba16e75a\jetified-flipper-fresco-plugin-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ea7487c2f19a38a7913f869fba16e75a\jetified-flipper-fresco-plugin-0.75.1\AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-async-storage_async-storage] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-async-storage_async-storage] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_masked-view] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_masked-view] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_toolbar-android] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\toolbar-android\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_toolbar-android] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-community\toolbar-android\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-date-picker] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-date-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-restart] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-restart\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-restart] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-restart\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-native:0.64.2] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\478164317e47c3d60c1bd38d0160dc74\jetified-react-native-0.64.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.64.2] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\478164317e47c3d60c1bd38d0160dc74\jetified-react-native-0.64.2\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\82ae702ce6452c85bbcde570c36bca5b\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\82ae702ce6452c85bbcde570c36bca5b\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\b9ac4dfec76d41d25d49aba686953f78\jetified-android-jsc-r245459\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\b9ac4dfec76d41d25d49aba686953f78\jetified-android-jsc-r245459\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-reanimated\android\build\.transforms\c31b7a9092b110438140d8bde0dd91a5\jetified-react-native-reanimated-64-jsc\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\node_modules\react-native-reanimated\android\build\.transforms\c31b7a9092b110438140d8bde0dd91a5\jetified-react-native-reanimated-64-jsc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:flipper:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\693d1bc1cdd21c3a786afc63a2b948c3\jetified-flipper-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:flipper:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\693d1bc1cdd21c3a786afc63a2b948c3\jetified-flipper-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\a71452c98a089110d40897148eadcb97\jetified-stetho-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\a71452c98a089110d40897148eadcb97\jetified-stetho-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\24db657e747d87ebda49c14dd6bd6143\jetified-fresco-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\24db657e747d87ebda49c14dd6bd6143\jetified-fresco-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f9c3befe509f9a5eebe9d59377238569\jetified-drawee-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f9c3befe509f9a5eebe9d59377238569\jetified-drawee-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\454efdb5da2b8f5e4bcb62cc7de8bbc5\jetified-nativeimagefilters-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\454efdb5da2b8f5e4bcb62cc7de8bbc5\jetified-nativeimagefilters-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92927383e5a50b6c9a235f6c35d55208\jetified-memory-type-native-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92927383e5a50b6c9a235f6c35d55208\jetified-memory-type-native-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-java:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d2e9c93ef848aa5b09756eae708d5cca\jetified-memory-type-java-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-java:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d2e9c93ef848aa5b09756eae708d5cca\jetified-memory-type-java-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\74945ff4e4cd238a097a96663ba51864\jetified-imagepipeline-native-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-native:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\74945ff4e4cd238a097a96663ba51864\jetified-imagepipeline-native-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:soloader:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92ae1dbc0b4094317089151adb712840\jetified-soloader-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:soloader:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\92ae1dbc0b4094317089151adb712840\jetified-soloader-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1cd3937e0e3ced80e38473f82c6e7d9a\jetified-soloader-0.10.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1cd3937e0e3ced80e38473f82c6e7d9a\jetified-soloader-0.10.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d8cd38b00373fe5fa3709d96e5862d5f\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\d8cd38b00373fe5fa3709d96e5862d5f\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1632d70b3da5d55404b67e0cbd7d43bf\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\1632d70b3da5d55404b67e0cbd7d43bf\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\83226a6783310930d3e260ad2e517563\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\83226a6783310930d3e260ad2e517563\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5f97a1bc41f8d2940b4f4620a82d2295\jetified-imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5f97a1bc41f8d2940b4f4620a82d2295\jetified-imagepipeline-okhttp3-2.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3c764d2b6cc0c1cd12cda281b4537b0b\jetified-memory-type-ashmem-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:memory-type-ashmem:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3c764d2b6cc0c1cd12cda281b4537b0b\jetified-memory-type-ashmem-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\93c9a275f97aad163b14c1c59d9b045c\jetified-imagepipeline-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\93c9a275f97aad163b14c1c59d9b045c\jetified-imagepipeline-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8000845c24a1ab415a33323fb8ac6621\jetified-nativeimagetranscoder-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8000845c24a1ab415a33323fb8ac6621\jetified-nativeimagetranscoder-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\6e920fd6d6ee6a5c3cdefc3869b51d3e\jetified-imagepipeline-base-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\6e920fd6d6ee6a5c3cdefc3869b51d3e\jetified-imagepipeline-base-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\842bf2f9cbde442e7f67ce12c7844224\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\842bf2f9cbde442e7f67ce12c7844224\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\62ecce35880984b0c138ce475dc962aa\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\62ecce35880984b0c138ce475dc962aa\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4a7e3a6a5b12d48699851e0cd7ae034e\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4a7e3a6a5b12d48699851e0cd7ae034e\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8689124caa1430799f02cb459f46e2da\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\8689124caa1430799f02cb459f46e2da\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3382c5b564774ccaff499b19fd9cada8\fragment-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3382c5b564774ccaff499b19fd9cada8\fragment-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\52af9bb131e0a20092265842e485c08f\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\52af9bb131e0a20092265842e485c08f\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\63d693d6393609dd312217953d27b75c\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\63d693d6393609dd312217953d27b75c\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\291b0dc121fa3d21c4d609cf60748a6c\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\291b0dc121fa3d21c4d609cf60748a6c\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\54a6463602e092e46e6a3bac5a75d6f2\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\54a6463602e092e46e6a3bac5a75d6f2\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\04dc713a4b52bfe7bc8b2f78befb8bd1\jetified-activity-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\04dc713a4b52bfe7bc8b2f78befb8bd1\jetified-activity-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\e1e987c088abb64cb98086af7cc51c67\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\e1e987c088abb64cb98086af7cc51c67\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\dfb7ac91904b3c5a9d1a67aa3c159bd7\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\dfb7ac91904b3c5a9d1a67aa3c159bd7\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\da24100bb264bf73e5dde9fdbea460b1\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\da24100bb264bf73e5dde9fdbea460b1\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ad21947eec5ee398f5c283b0c4da9784\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\ad21947eec5ee398f5c283b0c4da9784\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\37c157161f20899d64f5953cef65c57b\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3d3b0751e6f78ff8c1df2664b2714ed8\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3d3b0751e6f78ff8c1df2664b2714ed8\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\2927feeeb42b4fc86dbd2dd84012b8b1\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\2927feeeb42b4fc86dbd2dd84012b8b1\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4b3912fc93bd609a8bcd6b9553a912b6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\4b3912fc93bd609a8bcd6b9553a912b6\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f4cb9c7d93882f34a3725527850d73a1\jetified-lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\f4cb9c7d93882f34a3725527850d73a1\jetified-lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc547a46cd4534ed3e68d96227c7069\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc547a46cd4534ed3e68d96227c7069\lifecycle-viewmodel-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc35db89de5b085067c1324b8bfbbcf\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\9bc35db89de5b085067c1324b8bfbbcf\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3614be1ff0fe680b43a404a69c35dcfe\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3614be1ff0fe680b43a404a69c35dcfe\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc0c8a66a760b49fb5235fd8b1759370\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc0c8a66a760b49fb5235fd8b1759370\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3eec0492784393c9e1fd138d70bf69db\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\3eec0492784393c9e1fd138d70bf69db\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc10db4bca25ee5a43a6ea2eda221423\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\fc10db4bca25ee5a43a6ea2eda221423\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5de14670e80ac28f28052413a4a35127\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5de14670e80ac28f28052413a4a35127\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.henninghall.android:NumberPickerView:1.1.5] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5009d18516fcb0bcbb208b8508eda2ee\jetified-NumberPickerView-1.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.henninghall.android:NumberPickerView:1.1.5] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\5009d18516fcb0bcbb208b8508eda2ee\jetified-NumberPickerView-1.1.5\AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.2-2018i] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\af5f43e05e1e115667fb5b98463ce5d7\jetified-time4j-android-4.2-2018i\AndroidManifest.xml:7:5-9:41
+MERGED from [net.time4j:time4j-android:4.2-2018i] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\af5f43e05e1e115667fb5b98463ce5d7\jetified-time4j-android-4.2-2018i\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\11a0cbd29e171c364377114a9f368b18\jetified-fbcore-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\11a0cbd29e171c364377114a9f368b18\jetified-fbcore-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:ui-common:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\600f275462c0a479e210f696cc1ad20a\jetified-ui-common-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:ui-common:2.2.0] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\600f275462c0a479e210f696cc1ad20a\jetified-ui-common-2.2.0\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:5:22-75
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:11:9-86
+	android:name
+		ADDED from C:\Users\Weronika Sabor\Projekty\TeamManager\TeamManagerV3\android\app\src\debug\AndroidManifest.xml:11:19-83
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:16:5-76
+	android:name
+		ADDED from [com.facebook.flipper:flipper:0.75.1] C:\Users\Weronika Sabor\.gradle\caches\transforms-2\files-2.1\7ee11df414384df825d5a70865a181d5\jetified-flipper-0.75.1\AndroidManifest.xml:16:22-73
