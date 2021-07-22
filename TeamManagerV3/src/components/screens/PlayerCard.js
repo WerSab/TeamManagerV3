@@ -10,7 +10,7 @@ import {
 import {connect} from 'react-redux';
 
 import CustomFlatList_team from '../CustomFlatList_team';
-import ListaRund from '../ListaRund';
+import RoundList from '../RoundList';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
 const PlayerCard = ({user, turnieje, navigation}) => {
@@ -61,7 +61,7 @@ const PlayerCard = ({user, turnieje, navigation}) => {
         <TouchableOpacity
           style={styles.buttonClose}
           onPress={() => {
-             navigation.navigate('ListaRund')
+             navigation.navigate('RoundList')
           }}>
           <Text style={styles.textButton}>Dodaj turniej</Text>
         </TouchableOpacity>

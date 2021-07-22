@@ -9,7 +9,7 @@ import {
   from "react-native";
   import { connect } from 'react-redux'
 
-const ListaRund = ({turnieje, addMojeTurnieje}) => {
+const RoundList = ({turnieje, addMojeTurnieje}) => {
   
   const [selectedId, setSelectedId] = useState(null);
 
@@ -65,4 +65,4 @@ const mapState = (state) => ({
   turnieje: state.turnieje
 })
 
-export default connect(mapState) (ListaRund);
+export default connect(mapState) (RoundList);
