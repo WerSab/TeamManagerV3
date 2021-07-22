@@ -9,7 +9,7 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import CustomFlatList from '../CustomFlatList';
+import CustomFlatList_turnieje from '../CustomFlatList_turnieje';
 import {connect} from 'react-redux';
 import {Picker} from '@react-native-picker/picker';
 import {turniejeActions} from '../../store';
@@ -55,7 +55,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'black',
+          backgroundColor: 'white',
         }}>
         {isModalVisible && (
           <Modal
@@ -133,7 +133,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
 
         
 
-        <CustomFlatList
+        <CustomFlatList_turnieje
           data={turnieje}
           category="Turniej"
           borderRadius="20"

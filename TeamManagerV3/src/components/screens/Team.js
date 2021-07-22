@@ -12,8 +12,7 @@ import { connect } from 'react-redux'
 
 
 const Team = ({user}) => {
-  const team = user.filter(item => item.category === 'Zawodnik');
-  const { category } = team[0];
+  
   return (
     <>
       <View
@@ -25,8 +24,8 @@ const Team = ({user}) => {
         }}>
               
         <CustomFlatList_team
-          data={team}
-          category={category}
+          data={user}
+          category="Zawodnik"
           borderRadius="20"
           backgroundColor="#212933"
           textColor="white"
