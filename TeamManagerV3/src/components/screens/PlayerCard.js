@@ -1,130 +1,79 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
-  View,
-  Text,
-  Image,
-  FlatList,
   StyleSheet,
   TouchableOpacity,
-  Linking,
-  TextInput,
-  Alert,
+  Text,
   Modal,
-  Input,
+  View,
+  SafeAreaView,
 } from 'react-native';
-import { connect } from 'react-redux';
-import { userActions } from '../../store';
-import { turniejeActions } from '../../store';
-import SelctableTurniejeList from '../SelctableTurniejeList';
+import {connect} from 'react-redux';
+
+import CustomFlatList_team from '../CustomFlatList_team';
+import ListaRund from '../ListaRund';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
-const PlayerCard = ({
-  data,
-  turnieje,
-  category,
-  deleteElement,
-  withSearchbar,
-}) => {
-
+const PlayerCard = ({user, turnieje, navigation}) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [flatListData, setFlatListData] = useState(data)
-  const [playerListData, setPlayerListData] = useState(data)
-  const [searchInputValue, setSearchInputValue] = useState('')
 
-
-  const deleteAlert = (id, lastName) => {
-    Alert.alert(
-      "Delete alert",
-      `Do You want to delete ${lastName}?`,
-      [
-        { text: 'Cancel', onPress: () => console.log('Cancel Pressed') },
-        { text: 'Ok', onPress: () => deleteElement(id) },
-      ]
-    )
-  };
-
-  const renderSearchBar = () => {
-    return (
-      <TextInput inlineImageLeft="search_icon"
-        inlineImagePadding={5}
-        clearButtonMode="while-editing"
-        value={searchInputValue}
-        onChangeText={text => {
-          searchFilterFunction(text)
-        }}
-        placeholder="Wyszukaj..."
-        placeholderTextColor="gray"
-      />
-
-    )
-  }
-
-  const searchFilterFunction = (text) => {
-    const newData = data?.filter(item => {
-      const itemData = item.name.toLowerCase().trim()
-      const textData = text.toLowerCase()
-      return itemData.includes(textData)
-    })
-    setSearchInputValue(item);
-    setFlatListData(newData)
-  }
-
-  const PlayerCard = (selectedId) => {
-    const players = data?.filter(item => {
-      const itemData = item.id
-      const idData = selectedId
-      return itemData === idData
-    })
-    setPlayerListData(players)
-  }
-
-
-  const renderItem = item => {
-    return (
-
-      <View style={styles.container} key={item.id.toString()}>
-
-        <TouchableOpacity onPress={() => {
-          setIsModalVisible(true)
-          PlayerCard(item.id)
-        }}>
-          <Text numberOfLines={1} style={styles.text}>
-            {item.id}  {item.firstName}  {item.lastName}
-          </Text>
-        </TouchableOpacity>
-
-
-        <TouchableOpacity
-          onPress={() => deleteAlert(item.id, item.lastName)}
-          style={styles.image}>
-          <Image source={deleteIcon} style={styles.icon} />
-        </TouchableOpacity>
-      </View>
-
-    );
-  };
+  const playerCard = user.filter(item => item.login === '2');
+  const {login} = playerCard[0];
 
   return (
-    <View style={styles.container}>
-      
-      {withSearchbar ? renderSearchBar() : null}
-      <FlatList
-        data={flatListData}
-        category={category}
-        // ListHeaderComponent={renderSearchBar || null}
-        renderItem={({ item }) => renderItem(item)}
-        keyExtractor={(item, index) => index.toString()}
-        style={{ flex: 1 }}
-      />
-    </View>
+    <>
+      <View style={styles.container}>
+        {isModalVisible && (
+          <Modal
+            animationType="slide"
+            transparent={true}
+            onRequestClose={() => setIsModalVisible(false)}
+            onBackdropPress={() => setIsModalVisible(false)}
+            onBackButtonPress={() => setIsModalVisible(false)}>
+            <View style={styles.centeredView}>
+              <SelctableTurniejeList
+                data={turnieje}
+                borderRadius="20"
+                backgroundColor="white"
+                textColor="white"
+              />
+              <View style={styles.buttonRow}>
+                <TouchableOpacity
+                  style={styles.buttonClose}
+                  onPress={() => {
+                    setIsModalVisible(!isModalVisible);
+                  }}>
+                  <Text style={styles.textButton}>Close</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={styles.buttonSafe}
+                  onPress={() => {
+                    setIsModalVisible(!isModalVisible);
+                  }}>
+                  <Text style={styles.textButton}>Safe</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+        )}
+
+        <CustomFlatList_team data={playerCard} login={login} />
+        <TouchableOpacity
+          style={styles.buttonClose}
+          onPress={() => {
+             navigation.navigate('ListaRund')
+          }}>
+          <Text style={styles.textButton}>Dodaj turniej</Text>
+        </TouchableOpacity>
+      </View>
+    </>
   );
 };
-
-const mapDispatch = dispatch => ({
-  deleteElement: id => dispatch(userActions.deleteElement(id)),
-  selectedItem: id => dispatch(userActions.selectedItem(id)),
-  clearItems: () => dispatch(userActions.clearItems()),
+const mapState = state => ({
+  user: state.user,
 });
+
+export default connect(mapState)(PlayerCard);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -165,7 +114,7 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 0,
       height: 2,
-    }
+    },
   },
   textStyleBig: {
     color: 'black',
@@ -199,7 +148,4 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-evenly',
   },
-
-
 });
-export default connect(null, mapDispatch)(PlayerCard);

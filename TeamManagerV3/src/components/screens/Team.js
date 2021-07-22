@@ -12,7 +12,7 @@ import { connect } from 'react-redux'
 
 
 const Team = ({user}) => {
-  const team = user.filter(item => item.category === 'zawodnik');
+  const team = user.filter(item => item.category === 'Zawodnik');
   const { category } = team[0];
   return (
     <>

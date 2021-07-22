@@ -124,49 +124,7 @@ const CustomFlatList = ({
 
   return (
     <View style={styles.container}>
-      {isModalVisible && (
-        <Modal
-          animationType="slide"
-          transparent={true}
-          onRequestClose={() => setIsModalVisible(false)}
-          onBackdropPress={() => setIsModalVisible(false)}
-          onBackButtonPress={() => setIsModalVisible(false)}>
-          <View style={styles.centeredView}>
-            <TouchableOpacity>
-              <Text style={styles.textStyleBig}>Lista Zawodników</Text>
-
-              <CustomFlatList_team
-                data={user}
-                category="Zawodnik"
-                borderRadius="20"
-                backgroundColor="white"
-                textColor="white"
-                withSearchbar={false}
-              />
-              <View style={styles.buttonRow}>
-                <TouchableOpacity
-                  style={styles.buttonClose}
-                  onPress={() => {
-                    setIsModalVisible(!isModalVisible);
-                  }}>
-                  <Text style={styles.textButton}>Close</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={styles.buttonSafe}
-                  onPress={() => {
-                    setIsModalVisible(!isModalVisible);
-                    clearInputs();
-                    setPlayersToDB();
-                  }}>
-                  <Text style={styles.textButton}>Safe</Text>
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </Modal>
-      )}
-
+      
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}

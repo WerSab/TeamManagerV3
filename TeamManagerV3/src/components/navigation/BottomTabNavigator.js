@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {AuthStackNavigator, MainStackNavigator} from './StackNavigator'
+import {AuthStackNavigator, MainStackNavigator, TeamStackNavigator} from './StackNavigator'
 
 const Tab = createBottomTabNavigator();
 
@@ -14,9 +14,8 @@ const BottomTabNavigator = () => {
       headerBackTitle: 'Back',
     }}
     >
-      <Tab.Screen name="SplashScreen" component={AuthStackNavigator} />
-      <Tab.Screen name="RegisterScreen" component={AuthStackNavigator} />
       <Tab.Screen name="LoginScreen" component={AuthStackNavigator} />
+      <Tab.Screen name="Team" component={TeamStackNavigator} />
       <Tab.Screen name="Turnieje" component={MainStackNavigator} />
       
     </Tab.Navigator>
