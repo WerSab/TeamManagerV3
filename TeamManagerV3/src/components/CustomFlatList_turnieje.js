@@ -13,6 +13,7 @@ import {
 import {connect} from 'react-redux';
 import {turniejeActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
+import CustomFlatList from '../components/CustomFlatList';
 
 const CustomFlatList_turnieje = ({
   //propsy do flatlisty
@@ -25,6 +26,7 @@ const CustomFlatList_turnieje = ({
 }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [flatListData, setFlatListData] = useState(data);
+  const [roundCardData, setRoundCardData] = useState(data);
   const [searchInputValue, setSearchInputValue] = useState('');
 
   const deleteAlert = (id, name) => {
@@ -62,6 +64,15 @@ const CustomFlatList_turnieje = ({
     setFlatListData(newData);
   };
 
+  const RoundCard = (selectedId) => {
+    const round = data?.filter(item => {
+      const itemData = item.id
+      const idData = selectedId
+      return itemData === idData
+    })
+    setRoundCardData(round)
+  }
+
   const Item = ({item, onPress, backgroundColor, textColor}) => (
     <View style={styles.container}>
       <TouchableOpacity style={styles.row}>
@@ -85,7 +96,9 @@ const CustomFlatList_turnieje = ({
     return (
       <Item
         item={item}
-        onPress={() => setIsModalVisible(true)}
+        onPress={() => {
+          setIsModalVisible(true), RoundCard(item.id);
+        }}
         backgroundColor={{backgroundColor}}
         textColor={{color}}
       />
@@ -93,10 +106,49 @@ const CustomFlatList_turnieje = ({
   };
 
   return (
-    <View>
+    <View style={styles.container}>
+      {isModalVisible && (
+        <Modal
+          animationType="slide"
+          transparent={true}
+          onRequestClose={() => setIsModalVisible(false)}
+          onBackdropPress={() => setIsModalVisible(false)}
+          onBackButtonPress={() => setIsModalVisible(false)}>
+          <View style={styles.centeredView}>
+          <TouchableOpacity>
+              <Text style={styles.textStyleBig}>Round Card</Text>
+              <FlatList
+                data={roundCardData}
+                category={category}
+                // ListHeaderComponent={renderSearchBar || null}
+                renderItem={({ item }) => renderItem(item)}
+                keyExtractor={(item, index) => index.toString()}
+                style={{ flex: 1 }}
+              />
+            <View style={styles.buttonRow}>
+              <TouchableOpacity
+                style={styles.buttonClose}
+                onPress={() => {
+                  setIsModalVisible(!isModalVisible);
+                }}>
+                <Text style={styles.textButton}>Close</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.buttonSafe}
+                onPress={() => {
+                  setIsModalVisible(!isModalVisible);
+                }}>
+                <Text style={styles.textButton}>Safe</Text>
+              </TouchableOpacity>
+            </View>
+            </TouchableOpacity>
+          </View>
+        </Modal>
+      )}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
-        data={data}
+        data={flatListData}
         renderItem={renderItem}
         keyExtractor={item => item.id}
         withSearchbar={true}
@@ -127,10 +179,8 @@ const styles = StyleSheet.create({
   row: {
     flex: 2,
     flexDirection: 'row',
-    
   },
   item: {
-    
     padding: 5,
     marginVertical: 8,
     marginHorizontal: 3,
