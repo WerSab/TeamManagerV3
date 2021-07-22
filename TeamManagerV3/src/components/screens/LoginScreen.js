@@ -10,13 +10,16 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-
+import {connect} from 'react-redux';
 import Loader from '../screens/Loader';
+import PlayerCard from './PlayerCard'
+import {userActions} from '../../store';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({navigation, logInUser}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [loading, setLoading] = useState(false);
+    
+  //const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
 
   const passwordInputRef = createRef();
@@ -31,14 +34,17 @@ const LoginScreen = ({navigation}) => {
       alert('Please fill Password');
       return;
     }
-    setLoading(true);
+    // setLoading(true);
     let dataToSend = {email: userEmail, password: userPassword};
-   
+    console.log(dataToSend);
+    logInUser(dataToSend);
   };
-
+  const clearInputs = () => {
+    setUserEmail('');
+    setUserPassword('');
+  };
   return (
     <View style={styles.mainBody}>
-      <Loader loading={loading} />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
@@ -48,21 +54,17 @@ const LoginScreen = ({navigation}) => {
         }}>
         <View>
           <KeyboardAvoidingView enabled>
-            
             <View style={styles.SectionStyle}>
               <TextInput
                 style={styles.inputStyle}
-                onChangeText={(UserEmail) =>
-                  setUserEmail(UserEmail)
-                }
+                onChangeText={UserEmail => setUserEmail(UserEmail)}
                 placeholder="Enter Email" //dummy@abc.com
                 placeholderTextColor="#8b9cb5"
                 autoCapitalize="none"
                 keyboardType="email-address"
                 returnKeyType="next"
                 onSubmitEditing={() =>
-                  passwordInputRef.current &&
-                  passwordInputRef.current.focus()
+                  passwordInputRef.current && passwordInputRef.current.focus()
                 }
                 underlineColorAndroid="#f000"
                 blurOnSubmit={false}
@@ -71,9 +73,7 @@ const LoginScreen = ({navigation}) => {
             <View style={styles.SectionStyle}>
               <TextInput
                 style={styles.inputStyle}
-                onChangeText={(UserPassword) =>
-                  setUserPassword(UserPassword)
-                }
+                onChangeText={UserPassword => setUserPassword(UserPassword)}
                 placeholder="Enter Password" //12345
                 placeholderTextColor="#8b9cb5"
                 keyboardType="default"
@@ -86,16 +86,20 @@ const LoginScreen = ({navigation}) => {
               />
             </View>
             {errortext != '' ? (
-              <Text style={styles.errorTextStyle}>
-                {errortext}
-              </Text>
+              <Text style={styles.errorTextStyle}>{errortext}</Text>
             ) : null}
             <TouchableOpacity
               style={styles.buttonStyle}
               activeOpacity={0.5}
-              onPress={handleSubmitPress}>
+              onPress={() => {
+                handleSubmitPress();
+                clearInputs();
+                navigation.navigate('PlayerCard')
+                
+              }}>
               <Text style={styles.buttonTextStyle}>LOGIN</Text>
             </TouchableOpacity>
+            
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>
@@ -107,7 +111,17 @@ const LoginScreen = ({navigation}) => {
     </View>
   );
 };
-export default LoginScreen;
+
+const mapState = state => ({
+  user: state.user,
+});
+
+const mapDispatch = dispatch => ({
+  // setData: data => dispatch(recepiesActions.setData(data)),
+  logInUser: data => dispatch(userActions.logInUser(data)),
+});
+
+export default connect(mapState, mapDispatch)(LoginScreen);
 
 const styles = StyleSheet.create({
   mainBody: {

@@ -5,6 +5,7 @@ import Turniej from '../screens/Turniej';
 import Team from '../screens/Team';
 import SplashScreen from '../screens/SplashScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import PlayerCard from '../screens/PlayerCard';
 import LoginScreen from '../screens/LoginScreen';
 
 
@@ -20,6 +21,7 @@ const AuthStackNavigator = () => {
       }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+      <Stack.Screen name="PlayerCard" component={PlayerCard} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
     </Stack.Navigator>
   );
@@ -37,6 +39,7 @@ const MainStackNavigator = () => {
       
       
       <Stack.Screen name="Turnieje" component={Turniej} />
+      <Stack.Screen name="Team" component={Team} />
       
     </Stack.Navigator>
   );

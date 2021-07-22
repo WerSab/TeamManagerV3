@@ -111,3 +111,4 @@ const turniejeSlice = createSlice({
 });
 
 export default turniejeSlice;
+console.log('turniejeSlice',data)

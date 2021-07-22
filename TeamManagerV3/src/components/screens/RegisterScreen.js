@@ -24,7 +24,6 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
   const [adres, setAdres] = useState('');
   const [password, setPassword] = useState('');
   const [errortext, setErrortext] = useState('');
-  const [isSelected, setIsselected] = useState(false);
 
   const firstNameRef = createRef();
   const lastNameRef = createRef();
@@ -46,13 +45,15 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
 
   const setUserToDB = () => {
     let itemToSet = {
+      id: user.length,
+      category: 'Zawodnik',
       firstName: firstName,
       lastName: lastName,
       email: email,
       age: age,
       adres: adres,
       password: password,
-      isSelected: false
+      login: '1',
     };
     addUser(itemToSet);
   };
