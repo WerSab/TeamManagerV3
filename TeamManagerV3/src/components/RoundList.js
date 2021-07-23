@@ -1,51 +1,61 @@
-import React, { useState } from 'react';
-import { 
-  FlatList, 
-  View, 
-  StatusBar, 
-  StyleSheet, 
-  Text, 
-  TouchableOpacity } 
-  from "react-native";
-  import { connect } from 'react-redux'
+import React, { useState, useCallback } from 'react';
+import {
+  SafeAreaView,
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+  Text,
+} from 'react-native';
+
+import { connect } from 'react-redux';
+
+
 
 const RoundList = ({turnieje, addMojeTurnieje}) => {
-  
-  const [selectedId, setSelectedId] = useState(null);
+  const [selected, setSelected] = useState(new Map());
 
-  
-  const Item = ({ item, onPress, backgroundColor, textColor }) => (
-    <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-      <Text style={[styles.title, textColor]}>{item.name}</Text>
-    </TouchableOpacity>
-  );
-  
-  const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#d6d1d6" : "e8e5e8";
-    const color = item.id === selectedId ? 'white' : 'black';
-
+  const Item = ({ id, name, selected, onSelect }) => {
     return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item.id)}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
-      />
+      <TouchableOpacity
+        onPress={() => onSelect(id)}
+        style={[
+          styles.item,
+          { backgroundColor: selected ? '#FCA542' : '#ffffff' },
+        ]}
+      >
+        <Text style={styles.title}>{name}</Text>
+      </TouchableOpacity>
     );
-  };
+  }
+ 
+  const onSelect = useCallback(
+    id => {
+      const newSelected = new Map(selected);
+      newSelected.set(id, !selected.get(id));
+
+      setSelected(newSelected);
+    },
+    [selected],
+  );
 
   return (
-    <View>
-      
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={turnieje}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        extraData={selectedId}
+        renderItem={({ item }) => (
+          <Item
+            id={item.id}
+            name={item.name}
+            selected={!!selected.get(item.id)}
+            onSelect={onSelect}
+          />
+        )}
+        keyExtractor={item => item.id}
+        extraData={selected}
       />
-    </View>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -53,16 +63,16 @@ const styles = StyleSheet.create({
     
   },
   item: {
+    backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
-    marginHorizontal: 16,  },
+    marginHorizontal: 16,
+  },
   title: {
-    fontSize: 15,
+    fontSize: 20,
   },
 });
-
 const mapState = (state) => ({
   turnieje: state.turnieje
 })
-
 export default connect(mapState) (RoundList);

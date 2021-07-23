@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
 
   text: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
