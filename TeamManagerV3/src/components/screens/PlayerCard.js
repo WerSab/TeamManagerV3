@@ -77,13 +77,14 @@ export default connect(mapState)(PlayerCard);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderRadius: 10,
     paddingVertical: -5,
     paddingHorizontal: -5,
     width: '100%',
     backgroundColor: '#eeedef',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   text: {

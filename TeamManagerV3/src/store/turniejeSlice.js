@@ -7,20 +7,6 @@ let data = [
     date: '29.05 - 27.06.2021',
     name: 'III Liga Małopolska seniorów 2021',
     city: 'Kraków',
-    playersId: [
-      {
-        id: 1
-      }, 
-      {
-        id: 2,
-      }, 
-      {
-        id: 3,
-      }, 
-      {
-        id: 4,
-      }, 
-    ],
   },
 
   {
@@ -29,20 +15,6 @@ let data = [
     date: '10.07.2021',
     name: 'III Otwarty Całoroczny Turniej Juniorów i Seniorów',
     city: 'Myślibórz',
-    playersId: [
-      {
-        id: 1
-      }, 
-      {
-        id: 2,
-      }, 
-      {
-        id: 3,
-      }, 
-      {
-        id: 4,
-      }, 
-    ],
   },
   {
     category: 'turniej',
@@ -50,41 +22,6 @@ let data = [
     date: '18.07.2021',
     name: 'I Mistrzostwa w szachach szybkich w Skwierzynie',
     city: 'Skwierzyna',
-    playersId: [
-      {
-        id: 1
-      }, 
-      {
-        id: 2,
-      }, 
-      {
-        id: 3,
-      }, 
-      {
-        id: 4,
-      }, 
-    ],
-  },
-  {
-    category: 'liga',
-    id: 4,
-    date: '18.07.2021',
-    name: 'Zawody szachowe dla przedszkolaków',
-    city: 'Skwierzyna',
-    playersId: [
-      {
-        id: 1
-      }, 
-      {
-        id: 2,
-      }, 
-      {
-        id: 3,
-      }, 
-      {
-        id: 4,
-      }, 
-    ],
   },
 ];
 
@@ -111,4 +48,4 @@ const turniejeSlice = createSlice({
 });
 
 export default turniejeSlice;
-console.log('turniejeSlice',data)
+console.log('turniejeSlice', data.length);

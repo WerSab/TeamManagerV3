@@ -23,7 +23,6 @@ let data = [
     password: 'b',
     login: '2',
   },
-     
 ];
 const userSlice = createSlice({
   name: 'user',
@@ -55,6 +54,9 @@ const userSlice = createSlice({
       }
       return items;
     },
+
+    addGameToPlayer: data => dispatch(userActions.addGameToPlayer(data)),
   },
 });
 export default userSlice;
+console.log('turniejeSlice',data)

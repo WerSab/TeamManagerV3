@@ -3,17 +3,19 @@ import {persistStore, persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import turniejeSlice from './turniejeSlice';
 import userSlice from './userSlice';
+import gameSlice from './gameSlice';
 
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whiteList: ['user', 'turnieje'],
+  whiteList: ['user', 'turnieje', 'game'],
 }
 
 const reducer = combineReducers({
   user: userSlice.reducer,
-  turnieje: turniejeSlice.reducer
+  turnieje: turniejeSlice.reducer,
+  game: gameSlice.reducer,
 })
 
 
@@ -26,4 +28,5 @@ console.log(store.getState());
 
 export const turniejeActions = turniejeSlice.actions
 export const userActions = userSlice.actions
+export const gameActions = gameSlice.actions
 
