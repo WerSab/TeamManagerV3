@@ -31,6 +31,10 @@ const RoundList = ({turnieje, addGame, user, game}) => {
     const {name, id} = item;
     const isRoundSelected = selectedRound.filter(item => item === id).length > 0;
 
+const RoundList = ({turnieje, addMojeTurnieje}) => {
+  const [selected, setSelected] = useState(new Map());
+
+  const Item = ({ id, name, selected, onSelect }) => {
     return (
       <View>
         <TouchableOpacity
@@ -49,7 +53,17 @@ const RoundList = ({turnieje, addGame, user, game}) => {
         </TouchableOpacity>
       </View>
     );
-  };
+  }
+ 
+  const onSelect = useCallback(
+    id => {
+      const newSelected = new Map(selected);
+      newSelected.set(id, !selected.get(id));
+
+      setSelected(newSelected);
+    },
+    [selected],
+  );
 
   return (
     <View style={styles.container}>
@@ -59,7 +73,7 @@ const RoundList = ({turnieje, addGame, user, game}) => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -75,6 +89,7 @@ const styles = StyleSheet.create({
   },
 
   item: {
+<<<<<<< HEAD
     alignItems: 'center',
     justifyContent: 'center',
     margin: 2,
@@ -108,3 +123,18 @@ const mapDispatch = dispatch => ({
 });
 
 export default connect(mapState, mapDispatch)(RoundList);
+=======
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 20,
+  },
+});
+const mapState = (state) => ({
+  turnieje: state.turnieje
+})
+export default connect(mapState) (RoundList);
+>>>>>>> d9572cf361ad53b5ab183bb619a219589f411ef1
