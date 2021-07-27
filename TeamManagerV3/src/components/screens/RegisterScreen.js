@@ -56,6 +56,7 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
       login: '1',
     };
     addUser(itemToSet);
+    console.log('Rejestracja',itemToSet)
   };
 
   const handleSubmitButton = () => {
@@ -92,6 +93,7 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
     clearInputs();
     setUserToDB();
     navigation.navigate('LoginScreen')
+    console.log('USER', user)
 
   };
 

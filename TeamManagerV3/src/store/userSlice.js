@@ -59,4 +59,4 @@ const userSlice = createSlice({
   },
 });
 export default userSlice;
-console.log('turniejeSlice',data)
+console.log('userSlice',data.length, data)

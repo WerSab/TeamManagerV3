@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import userActions from '../store';
+
 let data = [
   {
     category: 'turniej',
@@ -48,4 +48,4 @@ const turniejeSlice = createSlice({
 });
 
 export default turniejeSlice;
-console.log('turniejeSlice', data.length);
+console.log('turniejeSlice', data.length, data);

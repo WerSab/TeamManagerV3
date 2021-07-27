@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
@@ -6,85 +6,55 @@ import {
   Modal,
   View,
   SafeAreaView,
+  FlatList,
 } from 'react-native';
 import {connect} from 'react-redux';
 
 import CustomFlatList_team from '../CustomFlatList_team';
+import CustomFlatlist_games from '../CustomFlatlist_games';
 import RoundList from '../RoundList';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
-const PlayerCard = ({user, turnieje, navigation}) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
+const PlayerCard = ({user, navigation, game}) => {
   const playerCard = user.filter(item => item.login === '2');
   const {login} = playerCard[0];
+  const {id} = playerCard[0];
+    
+  const myRounds = game.filter(item => item.player.id === id);
+  const player = myRounds[0];
+  console.log('myRounds', myRounds);
 
   return (
     <>
-      <View style={styles.container}>
-        {isModalVisible && (
-          <Modal
-            animationType="slide"
-            transparent={true}
-            onRequestClose={() => setIsModalVisible(false)}
-            onBackdropPress={() => setIsModalVisible(false)}
-            onBackButtonPress={() => setIsModalVisible(false)}>
-            <View style={styles.centeredView}>
-              <SelctableTurniejeList
-                data={turnieje}
-                borderRadius="20"
-                backgroundColor="white"
-                textColor="white"
-              />
-              <View style={styles.buttonRow}>
-                <TouchableOpacity
-                  style={styles.buttonClose}
-                  onPress={() => {
-                    setIsModalVisible(!isModalVisible);
-                  }}>
-                  <Text style={styles.textButton}>Close</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={styles.buttonSafe}
-                  onPress={() => {
-                    setIsModalVisible(!isModalVisible);
-                  }}>
-                  <Text style={styles.textButton}>Safe</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </Modal>
-        )}
-
+      <SafeAreaView style={styles.container}>
         <CustomFlatList_team data={playerCard} login={login} />
+        <CustomFlatlist_games data={myRounds} player={player}  />
         <TouchableOpacity
           style={styles.buttonClose}
           onPress={() => {
-             navigation.navigate('RoundList')
+            navigation.navigate('RoundList');
           }}>
-          <Text style={styles.textButton}>Dodaj turniej</Text>
+          <Text style={styles.textButton}>Add rounds</Text>
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
     </>
   );
 };
 const mapState = state => ({
   user: state.user,
+  game: state.game,
 });
 
 export default connect(mapState)(PlayerCard);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    borderRadius: 10,
-    paddingVertical: -5,
-    paddingHorizontal: -5,
-    width: '100%',
-    backgroundColor: '#eeedef',
     justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#1a112b',
+    alignContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
   },
 
   text: {
@@ -92,6 +62,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
   },
 
   image: {
@@ -129,7 +101,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     //elevation: 2,
     width: 120,
-    backgroundColor: '#CCCCCC',
+    backgroundColor: '#FCA542',
   },
   buttonSafe: {
     borderRadius: 10,

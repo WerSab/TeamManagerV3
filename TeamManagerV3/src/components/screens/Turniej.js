@@ -31,7 +31,6 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
     setHourInput('');
     setCityInput('');
     setLinkInput('');
-
   };
 
   const setTurniejToDB = () => {
@@ -45,9 +44,9 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
       link: linkInput,
     };
     addTurniej(itemToSet);
-    console.log(itemToSet)
+    console.log(itemToSet);
   };
-  
+
   return (
     <>
       <View
@@ -131,8 +130,6 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           </Modal>
         )}
 
-        
-
         <CustomFlatList_turnieje
           data={turnieje}
           category="Turniej"
@@ -143,18 +140,18 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
         />
       </View>
       <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-            <Image style={styles.icon} source={moreIcon} />
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <Image style={styles.icon} source={moreIcon} />
+        </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={styles.textTeam}> </Text>
-          </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.textTeam}> </Text>
+        </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => setIsModalVisible(true)}>
-            <Image style={styles.icon} source={addIcon} />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={() => setIsModalVisible(true)}>
+          <Image style={styles.icon} source={addIcon} />
+        </TouchableOpacity>
+      </View>
     </>
   );
 };
@@ -164,7 +161,6 @@ const mapState = state => ({
 });
 
 const mapDispatch = dispatch => ({
-  // setData: data => dispatch(recepiesActions.setData(data)),
   addTurniej: data => dispatch(turniejeActions.addTurniej(data)),
 });
 
@@ -176,7 +172,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#1a112b',
     width: '100%',
-    
   },
   buttonLogo: {
     flexDirection: 'row',

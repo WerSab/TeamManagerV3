@@ -13,23 +13,16 @@ import {
   Input,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {userActions} from '../store';
-import {turniejeActions} from '../store';
+import {gameActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
 
-const CustomFlatList_team = ({
+const CustomFlatList_games = ({
   data,
-  user,
   game,
-  turnieje,
-  category,
-  login,
   deleteElement,
   withSearchbar,
 }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const [flatListData, setFlatListData] = useState(data);
-  const [playerListData, setPlayerListData] = useState(data);
   const [searchInputValue, setSearchInputValue] = useState('');
 
   const deleteAlert = (id, lastName) => {
@@ -68,17 +61,14 @@ const CustomFlatList_team = ({
   const renderItem = item => {
     return (
       <View style={styles.container} key={item.id.toString()}>
-        <TouchableOpacity
-          onPress={() => {
-            setIsModalVisible(true);
-          }}>
+        <TouchableOpacity>
           <Text numberOfLines={1} style={styles.text}>
-            {item.id} {item.firstName} {item.lastName} {item.login}
+            {item.id} {item.round} {item.player}
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => deleteAlert(item.id, item.lastName)}
+          onPress={() => deleteAlert(item.id, item.round, item.player)}
           style={styles.image}>
           <Image source={deleteIcon} style={styles.icon} />
         </TouchableOpacity>
@@ -91,18 +81,8 @@ const CustomFlatList_team = ({
       {/* gdybyśmy wyrenderowali to jako ListHeaderComponent to by nam się za każdą literką przeładowywało */}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
-        data={flatListData}
-        category={category}
-        login={login}
-        // ListHeaderComponent={renderSearchBar || null}
-        renderItem={({item}) => renderItem(item)}
-        keyExtractor={(item, index) => index.toString()}
-        style={{flex: 1}}
-      />
-
-<FlatList
         data={game}
-        // ListHeaderComponent={renderSearchBar || null}
+        round= {true}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
         style={{flex: 1}}
@@ -110,10 +90,12 @@ const CustomFlatList_team = ({
     </View>
   );
 };
-
+const mapState = state => ({
+  game: state.game,
+});
 const mapDispatch = dispatch => ({
-  deleteElement: id => dispatch(userActions.deleteElement(id)),
-  clearItems: () => dispatch(userActions.clearItems()),
+  deleteElement: id => dispatch(gameActions.deleteElement(id)),
+  clearItems: () => dispatch(gameActions.clearItems()),
 });
 const styles = StyleSheet.create({
   container: {
@@ -190,4 +172,4 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
 });
-export default connect(null, mapDispatch)(CustomFlatList_team);
+export default connect(mapState, mapDispatch)(CustomFlatList_games);

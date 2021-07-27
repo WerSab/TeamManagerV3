@@ -15,7 +15,7 @@ import Loader from '../screens/Loader';
 import PlayerCard from './PlayerCard'
 import {userActions} from '../../store';
 
-const LoginScreen = ({navigation, logInUser}) => {
+const LoginScreen = ({navigation, logInUser, user}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
     
@@ -23,6 +23,9 @@ const LoginScreen = ({navigation, logInUser}) => {
   const [errortext, setErrortext] = useState('');
 
   const passwordInputRef = createRef();
+
+  
+
 
   const handleSubmitPress = () => {
     setErrortext('');
@@ -34,15 +37,17 @@ const LoginScreen = ({navigation, logInUser}) => {
       alert('Please fill Password');
       return;
     }
-    // setLoading(true);
-    let dataToSend = {email: userEmail, password: userPassword};
-    console.log(dataToSend);
-    logInUser(dataToSend);
+    
+    const loggedUser = user.filter(item=>item.email===userEmail &&item.password===userPassword);
+    console.log('logged user', loggedUser)
+    
   };
   const clearInputs = () => {
     setUserEmail('');
     setUserPassword('');
   };
+
+   
   return (
     <View style={styles.mainBody}>
       <ScrollView
@@ -116,12 +121,7 @@ const mapState = state => ({
   user: state.user,
 });
 
-const mapDispatch = dispatch => ({
-  // setData: data => dispatch(recepiesActions.setData(data)),
-  logInUser: data => dispatch(userActions.logInUser(data)),
-});
-
-export default connect(mapState, mapDispatch)(LoginScreen);
+export default connect(mapState, null)(LoginScreen);
 
 const styles = StyleSheet.create({
   mainBody: {
@@ -179,3 +179,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+
+

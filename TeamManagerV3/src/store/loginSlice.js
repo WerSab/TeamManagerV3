@@ -2,8 +2,8 @@ import {createSlice} from '@reduxjs/toolkit';
 let data = [
    
 ];
-const gameSlice = createSlice({
-  name: 'game',
+const loginSlice = createSlice({
+  name: 'login',
   initialState: data,
   reducers: {
     setData: (state, action) => {
@@ -12,5 +12,5 @@ const gameSlice = createSlice({
     addGame: (state, action) => [...state, action.payload],
   },
 });
-export default gameSlice;
+export default loginSlice;
 console.log('gameSlice', data.length, data);
