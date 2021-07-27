@@ -29,51 +29,67 @@ const RoundList = ({turnieje, addGame, user, game}) => {
 
   const renderRound = ({item, index}) => {
     const {name, id} = item;
-    const isRoundSelected = selectedRound.filter(item => item === id).length > 0;
+    const isRoundSelected =
+      selectedRound.filter(item => item === id).length > 0;
 
-const RoundList = ({turnieje, addMojeTurnieje}) => {
-  const [selected, setSelected] = useState(new Map());
+    const RoundList = ({turnieje, addMojeTurnieje}) => {
+      const [selected, setSelected] = useState(new Map());
 
-  const Item = ({ id, name, selected, onSelect }) => {
+      
+        return (
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                if (isRoundSelected) {
+                  setSelectedRound(item => item.filter(item => item !== id));
+                  setGameToDB(id);
+                } else {
+                  setSelectedRound(item => [...item, id]);
+                }
+              }}
+              style={[
+                styles.item,
+                isRoundSelected && {backgroundColor: 'grey'},
+              ]}>
+              <Text style={{color: isRoundSelected ? 'white' : 'grey'}}>
+                {name}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        );
+    };
+
+    const onSelect = useCallback(
+      id => {
+        const newSelected = new Map(selected);
+        newSelected.set(id, !selected.get(id));
+
+        setSelected(newSelected);
+      },
+      [selected],
+    );
+
     return (
-      <View>
-        <TouchableOpacity
-          onPress={() => {
-            if (isRoundSelected) {
-              setSelectedRound(item => item.filter(item => item !== id));
-              setGameToDB(id);
-            } else {
-              setSelectedRound(item => [...item, id]);
-            }
-          }}
-          style={[styles.item, isRoundSelected && {backgroundColor: 'grey'}]}>
-          <Text style={{color: isRoundSelected ? 'white' : 'grey'}}>
-            {name}
-          </Text>
+      <View style={styles.container}>
+        <FlatList data={round} renderItem={renderRound} />
+        <TouchableOpacity style={styles.buttonClose}>
+          <Text style={styles.textButton}>accept</Text>
         </TouchableOpacity>
       </View>
     );
-  }
- 
-  const onSelect = useCallback(
-    id => {
-      const newSelected = new Map(selected);
-      newSelected.set(id, !selected.get(id));
+  };
+};
+const mapState = state => ({
+  turnieje: state.turnieje,
+  game: state.game,
+  user: state.user,
+});
+const mapDispatch = dispatch => ({
+  // setData: data => dispatch(recepiesActions.setData(data)),
+  addGame: data => dispatch(gameActions.addGame(data)),
+});
 
-      setSelected(newSelected);
-    },
-    [selected],
-  );
-
-  return (
-    <View style={styles.container}>
-      <FlatList data={round} renderItem={renderRound} />
-      <TouchableOpacity style={styles.buttonClose}>
-        <Text style={styles.textButton}>accept</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+export default connect(mapState, mapDispatch)(RoundList);
 
 const styles = StyleSheet.create({
   container: {
@@ -89,7 +105,6 @@ const styles = StyleSheet.create({
   },
 
   item: {
-<<<<<<< HEAD
     alignItems: 'center',
     justifyContent: 'center',
     margin: 2,
@@ -112,29 +127,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-const mapState = state => ({
-  turnieje: state.turnieje,
-  game: state.game,
-  user: state.user,
-});
-const mapDispatch = dispatch => ({
-  // setData: data => dispatch(recepiesActions.setData(data)),
-  addGame: data => dispatch(gameActions.addGame(data)),
-});
-
-export default connect(mapState, mapDispatch)(RoundList);
-=======
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 20,
-  },
-});
-const mapState = (state) => ({
-  turnieje: state.turnieje
-})
-export default connect(mapState) (RoundList);
->>>>>>> d9572cf361ad53b5ab183bb619a219589f411ef1
