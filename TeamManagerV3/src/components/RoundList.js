@@ -32,10 +32,7 @@ const RoundList = ({turnieje, addGame, user, game}) => {
     const isRoundSelected =
       selectedRound.filter(item => item === id).length > 0;
 
-    const RoundList = ({turnieje, addMojeTurnieje}) => {
-      const [selected, setSelected] = useState(new Map());
-
-      
+          
         return (
           <View>
             <TouchableOpacity
@@ -59,16 +56,7 @@ const RoundList = ({turnieje, addGame, user, game}) => {
         );
     };
 
-    const onSelect = useCallback(
-      id => {
-        const newSelected = new Map(selected);
-        newSelected.set(id, !selected.get(id));
-
-        setSelected(newSelected);
-      },
-      [selected],
-    );
-
+    
     return (
       <View style={styles.container}>
         <FlatList data={round} renderItem={renderRound} />
@@ -78,7 +66,7 @@ const RoundList = ({turnieje, addGame, user, game}) => {
       </View>
     );
   };
-};
+
 const mapState = state => ({
   turnieje: state.turnieje,
   game: state.game,
