@@ -12,20 +12,18 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import Loader from '../screens/Loader';
-import PlayerCard from './PlayerCard'
+import PlayerCard from './PlayerCard';
 import {userActions} from '../../store';
+import {loginActions} from '../../store';
 
-const LoginScreen = ({navigation, logInUser, user}) => {
+const LoginScreen = ({navigation, addLogin, user, login}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-    
+
   //const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
 
   const passwordInputRef = createRef();
-
-  
-
 
   const handleSubmitPress = () => {
     setErrortext('');
@@ -37,17 +35,38 @@ const LoginScreen = ({navigation, logInUser, user}) => {
       alert('Please fill Password');
       return;
     }
-    
-    const loggedUser = user.filter(item=>item.email===userEmail &&item.password===userPassword);
-    console.log('logged user', loggedUser)
-    
+    for (let i = 0; i < user.length; i++) {
+      if (item.email === userEmail && item.password === userPassword) {
+        setLoginToDB();
+      } else {
+        alert('Invalid email or password');
+        return;
+      }
+    }
+
+    const loggedUser = user.filter(
+      item => item.email === userEmail && item.password === userPassword,
+    );
+    console.log('logged user', loggedUser);
   };
   const clearInputs = () => {
     setUserEmail('');
     setUserPassword('');
   };
 
-   
+  const setLoginToDB = () => {
+    let itemToSet = {
+      id: login.length,
+      email: userEmail,
+      password: userPassword,
+    };
+    addLogin(itemToSet);
+    console.log('tablica', login.length);
+    for (let i = 0; i < login.length; i++) {
+      console.log('tablica_login', login[i]);
+    }
+  };
+
   return (
     <View style={styles.mainBody}>
       <ScrollView
@@ -99,16 +118,20 @@ const LoginScreen = ({navigation, logInUser, user}) => {
               onPress={() => {
                 handleSubmitPress();
                 clearInputs();
-                navigation.navigate('PlayerCard')
-                
+                navigation.navigate('PlayerCard');
               }}>
               <Text style={styles.buttonTextStyle}>LOGIN</Text>
             </TouchableOpacity>
-            
+
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('RegisterScreen')}>
               New Here ? Register
+            </Text>
+            <Text
+              style={styles.registerTextStyle}
+              onPress={() => navigation.navigate('PasswordRecoveryScreen')}>
+              Forgot password? 
             </Text>
           </KeyboardAvoidingView>
         </View>
@@ -119,9 +142,13 @@ const LoginScreen = ({navigation, logInUser, user}) => {
 
 const mapState = state => ({
   user: state.user,
+  login: state.login,
+});
+const mapDispatch = dispatch => ({
+  addLogin: data => dispatch(loginActions.addLogin(data)),
 });
 
-export default connect(mapState, null)(LoginScreen);
+export default connect(mapState, mapDispatch)(LoginScreen);
 
 const styles = StyleSheet.create({
   mainBody: {
@@ -179,6 +206,3 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
-
-
-

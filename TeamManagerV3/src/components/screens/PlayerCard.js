@@ -22,7 +22,7 @@ const PlayerCard = ({user, navigation, game}) => {
   const {id} = playerCard[0];
     
   const myRounds = game.filter(item => item.player.id === id);
-  const player = myRounds[0];
+  const {player} = myRounds[0];
   console.log('myRounds', myRounds);
 
   return (

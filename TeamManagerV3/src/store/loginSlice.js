@@ -9,8 +9,8 @@ const loginSlice = createSlice({
     setData: (state, action) => {
       return action.payload;
     },
-    addGame: (state, action) => [...state, action.payload],
+    addLogin: (state, action) => [...state, action.payload],
   },
 });
 export default loginSlice;
-console.log('gameSlice', data.length, data);
+console.log('loginSlice', data.length, data);

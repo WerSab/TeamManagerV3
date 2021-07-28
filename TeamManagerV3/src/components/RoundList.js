@@ -36,9 +36,8 @@ const RoundList = ({turnieje, addGame, user, game, navigation}) => {
   );
 
   const filteredPlayer = user.filter(item => item.login === '2');
-  const {id}=filteredPlayer[0];
-  
-  
+  const {id} = filteredPlayer[0];
+
   const setGameToDB = () => {
     let itemToSet = {
       id: game.length,
@@ -113,7 +112,6 @@ const mapState = state => ({
   user: state.user,
 });
 const mapDispatch = dispatch => ({
-  // setData: data => dispatch(recepiesActions.setData(data)),
   addGame: data => dispatch(gameActions.addGame(data)),
 });
 

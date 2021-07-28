@@ -63,7 +63,7 @@ const CustomFlatList_games = ({
       <View style={styles.container} key={item.id.toString()}>
         <TouchableOpacity>
           <Text numberOfLines={1} style={styles.text}>
-            {item.id} {item.round} {item.player}
+           {item.round}
           </Text>
         </TouchableOpacity>
 

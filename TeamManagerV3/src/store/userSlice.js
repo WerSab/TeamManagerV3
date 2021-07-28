@@ -17,7 +17,7 @@ let data = [
     id: 1,
     firstName: 'b',
     lastName: 'b',
-    email: 'b',
+    email: 'weronika.sabor@interia.pl',
     age: 'b',
     adres: 'b,',
     password: 'b',

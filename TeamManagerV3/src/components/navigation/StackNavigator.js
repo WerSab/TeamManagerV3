@@ -5,6 +5,7 @@ import Turniej from '../screens/Turniej';
 import Team from '../screens/Team';
 import SplashScreen from '../screens/SplashScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import PasswordRecoveryScreen from '../screens/PasswordRecoveryScreen';
 import PlayerCard from '../screens/PlayerCard';
 import RoundList from '../RoundList';
 import LoginScreen from '../screens/LoginScreen';
@@ -22,6 +23,7 @@ const AuthStackNavigator = () => {
       }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+      <Stack.Screen name="PasswordRecoveryScreen" component={PasswordRecoveryScreen} />
       <Stack.Screen name="PlayerCard" component={PlayerCard} />
       <Stack.Screen name="RoundList" component={RoundList} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
