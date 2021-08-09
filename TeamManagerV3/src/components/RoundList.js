@@ -10,7 +10,7 @@ import {
 import {connect} from 'react-redux';
 import {gameActions} from '../store';
 
-const RoundList = ({turnieje, addGame, user, game, navigation}) => {
+const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
   const [selected, setSelected] = useState(new Map());
   const Item = ({id, name, selected, onSelect}) => {
     return (
@@ -34,20 +34,21 @@ const RoundList = ({turnieje, addGame, user, game, navigation}) => {
     },
     [selected],
   );
+  const loginSize=login.length;
+  const loggedPlayer = login.filter(item => item.loginID === loginSize-1);
+    const {playerID} = loggedPlayer[0];
 
-  const filteredPlayer = user.filter(item => item.login === '2');
-  const {id} = filteredPlayer[0];
 
   const setGameToDB = () => {
     let itemToSet = {
-      id: game.length,
+      gameID: game.length,
       round: selected,
-      player: id,
+      gamePlayerID: playerID,
     };
     addGame(itemToSet);
-    console.log('tablica', game.length);
+    console.log('item to set game: ', itemToSet);
     for (let i = 0; i < game.length; i++) {
-      console.log('tablica_game', game[i]);
+      console.log('zawartość tablicy: ', game[i]);
     }
   };
 
@@ -110,6 +111,7 @@ const mapState = state => ({
   turnieje: state.turnieje,
   game: state.game,
   user: state.user,
+  login: state.login,
 });
 const mapDispatch = dispatch => ({
   addGame: data => dispatch(gameActions.addGame(data)),

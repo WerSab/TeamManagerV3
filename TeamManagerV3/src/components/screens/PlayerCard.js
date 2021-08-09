@@ -15,21 +15,29 @@ import CustomFlatlist_games from '../CustomFlatlist_games';
 import RoundList from '../RoundList';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
+const PlayerCard = ({login, user, game, navigation}) => {
+  const loginSize = login.length;
 
-const PlayerCard = ({user, navigation, game}) => {
-  const playerCard = user.filter(item => item.login === '2');
-  const {login} = playerCard[0];
+  const loggedPlayer = login.filter(item => item.loginID === loginSize - 1);
+  const {playerID} = loggedPlayer[0];
+  console.log('playerID', playerID);
+
+  const playerCard = user.filter(item => item.id === playerID);
   const {id} = playerCard[0];
-    
-  const myRounds = game.filter(item => item.player.id === id);
-  const {player} = myRounds[0];
-  console.log('myRounds', myRounds);
+  console.log('id', id);
 
+
+  console.log('gameslice', game)
+  //const myRound = game.filter(item => item.gamePlayerID === id);
+  //const {gamePlayerID} = myRound[0];
+  //console.log('gamePlayerID', gamePlayerID);
+//<CustomFlatlist_games data={[myRound]} gamePlayerID={gamePlayerID} />
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <CustomFlatList_team data={playerCard} login={login} />
-        <CustomFlatlist_games data={myRounds} player={player}  />
+        <CustomFlatList_team data={playerCard} id={id} />
+        
+
         <TouchableOpacity
           style={styles.buttonClose}
           onPress={() => {
@@ -44,6 +52,7 @@ const PlayerCard = ({user, navigation, game}) => {
 const mapState = state => ({
   user: state.user,
   game: state.game,
+  login: state.login,
 });
 
 export default connect(mapState)(PlayerCard);

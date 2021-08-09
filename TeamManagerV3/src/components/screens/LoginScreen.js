@@ -15,6 +15,7 @@ import Loader from '../screens/Loader';
 import PlayerCard from './PlayerCard';
 import {userActions} from '../../store';
 import {loginActions} from '../../store';
+import { set } from 'react-native-reanimated';
 
 const LoginScreen = ({navigation, addLogin, user, login}) => {
   const [userEmail, setUserEmail] = useState('');
@@ -35,36 +36,39 @@ const LoginScreen = ({navigation, addLogin, user, login}) => {
       alert('Please fill Password');
       return;
     }
-    for (let i = 0; i < user.length; i++) {
-      if (item.email === userEmail && item.password === userPassword) {
-        setLoginToDB();
-      } else {
-        alert('Invalid email or password');
-        return;
-      }
-    }
 
     const loggedUser = user.filter(
       item => item.email === userEmail && item.password === userPassword,
     );
-    console.log('logged user', loggedUser);
+    const {id} = loggedUser[0];
+
+    console.log('logged user', loggedUser.length);
+    console.log('user length', user.length);
+    console.log('login length', login.length);
+    console.log('ID Gracza', id);
+    console.log('zawartość loginslice', login);
+
+    if (loggedUser.length > 0) {
+      alert('Login is ok.');
+      setLoginToDB(id);
+      navigation.navigate('PlayerCard');
+    } else {
+      alert('Login failed.');
+    }
   };
+
   const clearInputs = () => {
     setUserEmail('');
     setUserPassword('');
   };
 
-  const setLoginToDB = () => {
+  const setLoginToDB = id => {
     let itemToSet = {
-      id: login.length,
-      email: userEmail,
-      password: userPassword,
+      loginID: login.length,
+      playerID: id,
     };
     addLogin(itemToSet);
-    console.log('tablica', login.length);
-    for (let i = 0; i < login.length; i++) {
-      console.log('tablica_login', login[i]);
-    }
+    console.log('login item to set',itemToSet)
   };
 
   return (
@@ -118,7 +122,6 @@ const LoginScreen = ({navigation, addLogin, user, login}) => {
               onPress={() => {
                 handleSubmitPress();
                 clearInputs();
-                navigation.navigate('PlayerCard');
               }}>
               <Text style={styles.buttonTextStyle}>LOGIN</Text>
             </TouchableOpacity>
@@ -131,7 +134,7 @@ const LoginScreen = ({navigation, addLogin, user, login}) => {
             <Text
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate('PasswordRecoveryScreen')}>
-              Forgot password? 
+              Forgot password?
             </Text>
           </KeyboardAvoidingView>
         </View>

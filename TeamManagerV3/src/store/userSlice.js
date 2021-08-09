@@ -9,7 +9,7 @@ let data = [
     age: 'a',
     adres: 'a,',
     password: 'a',
-    login: '1',
+    
   },
 
   {
@@ -21,7 +21,7 @@ let data = [
     age: 'b',
     adres: 'b,',
     password: 'b',
-    login: '2',
+    
   },
 ];
 const userSlice = createSlice({
