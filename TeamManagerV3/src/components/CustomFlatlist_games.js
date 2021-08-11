@@ -60,10 +60,10 @@ const CustomFlatList_games = ({
 
   const renderItem = item => {
     return (
-      <View style={styles.container} key={item.id.toString()}>
+      <View style={styles.container} key={item.gameID.toString()}>
         <TouchableOpacity>
           <Text numberOfLines={1} style={styles.text}>
-           {item.round}
+           {item.gamePlayerID}  {item.round}
           </Text>
         </TouchableOpacity>
 
@@ -81,7 +81,7 @@ const CustomFlatList_games = ({
       {/* gdybyśmy wyrenderowali to jako ListHeaderComponent to by nam się za każdą literką przeładowywało */}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
-        data={game}
+        data={flatListData}
         round= {true}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
