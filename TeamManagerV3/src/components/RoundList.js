@@ -15,7 +15,7 @@ const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
   const Item = ({id, name, selected, onSelect}) => {
     return (
       <TouchableOpacity
-        onPress={() => onSelect(id)}
+        onPress={() => onSelect(name)}
         style={[
           styles.item,
           {backgroundColor: selected ? '#FCA542' : '#ffffff'},
@@ -26,18 +26,17 @@ const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
   };
 
   const onSelect = useCallback(
-    id => {
+    name => {
       const newSelected = new Map(selected);
-      newSelected.set(id, !selected.get(id));
+      newSelected.set(name, !selected.get(name));
 
       setSelected(newSelected);
     },
     [selected],
   );
-  const loginSize=login.length;
-  const loggedPlayer = login.filter(item => item.loginID === loginSize-1);
-    const {playerID} = loggedPlayer[0];
-
+  const loginSize = login.length;
+  const loggedPlayer = login.filter(item => item.loginID === loginSize - 1);
+  const {playerID} = loggedPlayer[0];
 
   const setGameToDB = () => {
     let itemToSet = {
@@ -58,13 +57,12 @@ const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
         data={turnieje}
         renderItem={({item}) => (
           <Item
-            id={item.id}
             name={item.name}
-            selected={!!selected.get(item.id)}
+            selected={!!selected.get(item.name)}
             onSelect={onSelect}
           />
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.name}
         extraData={selected}
       />
       <TouchableOpacity

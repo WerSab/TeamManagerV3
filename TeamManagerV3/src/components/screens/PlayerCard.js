@@ -15,7 +15,7 @@ import CustomFlatlist_games from '../CustomFlatlist_games';
 import RoundList from '../RoundList';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
-const PlayerCard = ({login, user, game, navigation}) => {
+const PlayerCard = ({login, user, game,navigation}) => {
   const loginSize = login.length;
 
   const loggedPlayer = login.filter(item => item.loginID === loginSize - 1);
@@ -30,7 +30,7 @@ const PlayerCard = ({login, user, game, navigation}) => {
   console.log('gameslice', game)
   const myRound = game.filter(item => item.gamePlayerID === id);
   const {gamePlayerID} = myRound[0];
-  console.log('gamePlayerID', gamePlayerID);
+ console.log('gamePlayerID', gamePlayerID);
   //<CustomFlatlist_games data={game} gamePlayerID={gamePlayerID} />
   
 

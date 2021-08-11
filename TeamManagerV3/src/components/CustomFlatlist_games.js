@@ -17,58 +17,34 @@ import {gameActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
 
 const CustomFlatList_games = ({
-  data,
   game,
+  gamePlayerID,
   deleteElement,
   withSearchbar,
 }) => {
-  const [flatListData, setFlatListData] = useState(data);
-  const [searchInputValue, setSearchInputValue] = useState('');
-
-  const deleteAlert = (id, lastName) => {
-    Alert.alert('Delete alert', `Do You want to delete ${lastName}?`, [
+  const [flatListData, setFlatListData] = useState(game);
+  console.log('flatListData - data', flatListData)
+  console.log('game - data', game)
+  console.log('gamePlayerID', gamePlayerID)
+  const deleteAlert = (gameID, name) => {
+    Alert.alert('Delete alert', `Do You want to delete ${name}?`, [
       {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
-      {text: 'Ok', onPress: () => deleteElement(id)},
+      {text: 'Ok', onPress: () => deleteElement(gameID)},
     ]);
   };
 
-  const renderSearchBar = () => {
-    return (
-      <TextInput
-        inlineImageLeft="search_icon"
-        inlineImagePadding={5}
-        clearButtonMode="while-editing"
-        value={searchInputValue}
-        onChangeText={text => {
-          searchFilterFunction(text);
-        }}
-        placeholder="Wyszukaj..."
-        placeholderTextColor="gray"
-      />
-    );
-  };
-
-  const searchFilterFunction = text => {
-    const newData = data?.filter(item => {
-      const itemData = item.name.toLowerCase().trim();
-      const textData = text.toLowerCase();
-      return itemData.includes(textData);
-    });
-    setSearchInputValue(item);
-    setFlatListData(newData);
-  };
-
+  
   const renderItem = item => {
     return (
       <View style={styles.container} key={item.gameID.toString()}>
         <TouchableOpacity>
           <Text numberOfLines={1} style={styles.text}>
-           {item.gamePlayerID}  {item.round}
+           {item.round}
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => deleteAlert(item.id, item.round, item.player)}
+          onPress={() => deleteAlert(item.gameID, item.round, item.gamePlayerID)}
           style={styles.image}>
           <Image source={deleteIcon} style={styles.icon} />
         </TouchableOpacity>
@@ -82,7 +58,7 @@ const CustomFlatList_games = ({
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}
-        round= {true}
+        gamePlayerID={gamePlayerID} 
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
         style={{flex: 1}}
