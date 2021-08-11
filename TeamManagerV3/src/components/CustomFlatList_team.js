@@ -93,8 +93,7 @@ const CustomFlatList_team = ({
       <FlatList
         data={flatListData}
         category={category}
-        login={login}
-        // ListHeaderComponent={renderSearchBar || null}
+         // ListHeaderComponent={renderSearchBar || null}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
         style={{flex: 1}}

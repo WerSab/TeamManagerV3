@@ -31,13 +31,15 @@ const PlayerCard = ({login, user, game, navigation}) => {
   const myRound = game.filter(item => item.gamePlayerID === id);
   const {gamePlayerID} = myRound[0];
   console.log('gamePlayerID', gamePlayerID);
+  //<CustomFlatlist_games data={game} gamePlayerID={gamePlayerID} />
   
 
   return (
     <>
       <SafeAreaView style={styles.container}>
         <CustomFlatList_team data={playerCard} id={id} />
-        <CustomFlatlist_games data={game} gamePlayerID={gamePlayerID} />
+        <CustomFlatlist_games data={myRound} gamePlayerID={gamePlayerID} />
+        
 
         <TouchableOpacity
           style={styles.buttonClose}
