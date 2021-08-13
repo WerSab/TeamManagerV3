@@ -20,16 +20,13 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [age, setAge] = useState('');
-  const [adres, setAdres] = useState('');
   const [password, setPassword] = useState('');
   const [errortext, setErrortext] = useState('');
 
   const firstNameRef = createRef();
   const lastNameRef = createRef();
   const emailRef = createRef();
-  const ageRef = createRef();
-  const adresRef = createRef();
+  
   const passwordRef = createRef();
 
   
@@ -38,8 +35,7 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
     setFirstName('');
     setLastName('');
     setEmail('');
-    setAge('');
-    setAdres('');
+    
     setPassword('');
   };
 
@@ -50,10 +46,8 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      age: age,
-      adres: adres,
       password: password,
-      login: '1',
+      
     };
     addUser(itemToSet);
     console.log('Rejestracja',itemToSet)
@@ -74,14 +68,7 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
       alert('Please fill Email');
       return;
     }
-    if (!age) {
-      alert('Please fill Age');
-      return;
-    }
-    if (!adres) {
-      alert('Please fill Address');
-      return;
-    }
+    
     if (!password) {
       alert('Please fill Password');
       return;
@@ -155,36 +142,7 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
             />
           </View>
 
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={age => setAge(age)}
-              underlineColorAndroid="#f000"
-              placeholder="Wiek ..."
-              placeholderTextColor="#8b9cb5"
-              keyboardType="numeric"
-              ref={ageRef}
-              returnKeyType="next"
-              onSubmitEditing={() =>
-                adresRef.current && adresRef.current.focus()
-              }
-              blurOnSubmit={false}
-            />
-          </View>
-          <View style={styles.SectionStyle}>
-            <TextInput
-              style={styles.inputStyle}
-              onChangeText={adres => setAdres(adres)}
-              underlineColorAndroid="#f000"
-              placeholder="Adres ..."
-              placeholderTextColor="#8b9cb5"
-              autoCapitalize="sentences"
-              ref={adresRef}
-              returnKeyType="next"
-              onSubmitEditing={Keyboard.dismiss}
-              blurOnSubmit={false}
-            />
-          </View>
+                 
           <View style={styles.SectionStyle}>
             <TextInput
               style={styles.inputStyle}
@@ -195,7 +153,6 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
               ref={passwordRef}
               returnKeyType="next"
               secureTextEntry={true}
-              onSubmitEditing={() => ageRef.current && ageRef.current.focus()}
               blurOnSubmit={false}
             />
           </View>

@@ -12,7 +12,7 @@ import {gameActions} from '../store';
 
 const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
   const [selected, setSelected] = useState(new Map());
-  const Item = ({id, name, selected, onSelect}) => {
+  const Item = ({name, selected, onSelect}) => {
     return (
       <TouchableOpacity
         onPress={() => onSelect(name)}
@@ -32,16 +32,23 @@ const RoundList = ({turnieje, addGame, user, game, navigation, login}) => {
 
       setSelected(newSelected);
     },
-    [selected],
+    
   );
+  console.log('selectedRoundList', selected)
+  
   const loginSize = login.length;
   const loggedPlayer = login.filter(item => item.loginID === loginSize - 1);
   const {playerID} = loggedPlayer[0];
 
+  const selectedTab=Array.from(selected);
+
+console.log('tab', selectedTab)
+console.log('selectedTab', selectedTab[0])
+
   const setGameToDB = () => {
     let itemToSet = {
       gameID: game.length,
-      round: selected,
+      round: selectedTab,
       gamePlayerID: playerID,
     };
     addGame(itemToSet);
