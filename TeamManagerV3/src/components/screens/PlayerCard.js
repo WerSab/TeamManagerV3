@@ -15,7 +15,7 @@ import CustomFlatlist_games from '../CustomFlatlist_games';
 import RoundList from '../RoundList';
 import deleteIcon from '../../../assets/icons/delete.png/';
 
-const PlayerCard = ({login, user, game,navigation}) => {
+const PlayerCard = ({login, user, game, navigation, round}) => {
   const loginSize = login.length;
 
   const loggedPlayer = login.filter(item => item.loginID === loginSize - 1);
@@ -25,12 +25,13 @@ const PlayerCard = ({login, user, game,navigation}) => {
   const playerCard = user.filter(item => item.id === playerID);
   const {id} = playerCard[0];
   console.log('id', id);
-
+  console.log('round', round);
 
   console.log('gameslice', game)
-  const myRound = game.filter(item => item.gamePlayerID === id);
-  const {gamePlayerID} = myRound[0];
- console.log('gamePlayerID', gamePlayerID);
+ const myRound = game.filter(item => item.gamePlayerID === playerID);
+ const {gamePlayerID} = myRound[0];
+  console.log('gamePlayerID', gamePlayerID);
+ console.log('myRound', myRound);
   //<CustomFlatlist_games data={game} gamePlayerID={gamePlayerID} />
   
 
@@ -38,8 +39,7 @@ const PlayerCard = ({login, user, game,navigation}) => {
     <>
       <SafeAreaView style={styles.container}>
         <CustomFlatList_team data={playerCard} id={id} />
-        <CustomFlatlist_games data={myRound} gamePlayerID={gamePlayerID} />
-        
+        <CustomFlatlist_games data={myRound}/> 
 
         <TouchableOpacity
           style={styles.buttonClose}

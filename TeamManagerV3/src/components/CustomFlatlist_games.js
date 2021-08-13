@@ -15,6 +15,7 @@ import {
 import {connect} from 'react-redux';
 import {gameActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
+import { round } from 'react-native-reanimated';
 
 const CustomFlatList_games = ({
   game,
@@ -39,10 +40,11 @@ const CustomFlatList_games = ({
       <View style={styles.container} key={item.gameID.toString()}>
         <TouchableOpacity>
           <Text numberOfLines={1} style={styles.text}>
-           {item.round}
+          {item.gamePlayerID} 
+          {item.round}
           </Text>
         </TouchableOpacity>
-
+        
         <TouchableOpacity
           onPress={() => deleteAlert(item.gameID, item.round, item.gamePlayerID)}
           style={styles.image}>
