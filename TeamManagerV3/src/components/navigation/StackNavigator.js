@@ -10,7 +10,6 @@ import PlayerCard from '../screens/PlayerCard';
 import RoundList from '../RoundList';
 import LoginScreen from '../screens/LoginScreen';
 
-
 const Stack = createStackNavigator();
 
 const AuthStackNavigator = () => {
@@ -23,11 +22,13 @@ const AuthStackNavigator = () => {
       }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-      <Stack.Screen name="PasswordRecoveryScreen" component={PasswordRecoveryScreen} />
+      <Stack.Screen
+        name="PasswordRecoveryScreen"
+        component={PasswordRecoveryScreen}
+      />
       <Stack.Screen name="PlayerCard" component={PlayerCard} />
       <Stack.Screen name="RoundList" component={RoundList} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
-      
     </Stack.Navigator>
   );
 };
@@ -41,11 +42,7 @@ const MainStackNavigator = () => {
         headerBackTitle: 'Back',
         justifyContent: 'center',
       }}>
-      
-      
       <Stack.Screen name="Turnieje" component={Turniej} />
-    
-      
     </Stack.Navigator>
   );
 };
@@ -59,11 +56,7 @@ const TeamStackNavigator = () => {
         headerBackTitle: 'Back',
         justifyContent: 'center',
       }}>
-      
-      
       <Stack.Screen name="Team" component={Team} />
-    
-      
     </Stack.Navigator>
   );
 };

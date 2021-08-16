@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   View,
+  SafeAreaView,
   Text,
   Image,
   FlatList,
@@ -65,50 +66,47 @@ const CustomFlatList_turnieje = ({
     setFlatListData(newData);
   };
 
-  const RoundCard = (selectedId) => {
+  const RoundCard = selectedId => {
     const rounds = data?.filter(item => {
-      const itemData = item.id
-      const idData = selectedId
-      return itemData === idData
-    })
-    setRoundListData(rounds)
-  }
+      const itemData = item.id;
+      const idData = selectedId;
+      return itemData === idData;
+    });
+    setRoundListData(rounds);
+  };
 
   const renderItem = item => {
     return (
       <>
-        <View style={styles.button} key={item.id.toString()}>
+        <View key={item.id.toString()}>
           <TouchableOpacity
-            style={styles.name}
             onPress={() => {
               setIsModalVisible(true);
               RoundCard(item.id);
-            }}>
-            <Text numberOfLines={1} style={[styles.textStyleBig]}>
-              {item.id} {item.name}
+            }}
+            style={[styles.container, {backgroundColor: '#ffffff'}]}>
+            <Text numberOfLines={1} style={styles.text}>{item.name}
             </Text>
+
+            <TouchableOpacity onPress={() => deleteAlert(item.id, item.name)}>
+              <Image source={deleteIcon} style={styles.icon} />
+            </TouchableOpacity>
           </TouchableOpacity>
-
-          <TouchableOpacity style={styles.buttonBreakHeight}></TouchableOpacity>
-
-          <TouchableOpacity onPress={() => deleteAlert(item.id, item.name)}>
-            <Image source={deleteIcon} style={styles.icon} />
-          </TouchableOpacity>
-
-
-
-          <FlatList
-                  data={item.playersId}
-                  renderItem={({ item }) => <Text>{item.id}</Text>}
-                  keyExtractor={item => item.id}
-                />
         </View>
       </>
     );
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      {withSearchbar ? renderSearchBar() : null}
+      <FlatList
+        data={flatListData}
+        category={category}
+        renderItem={({item}) => renderItem(item)} //do renderItem przekazujemy wartośc funkcji renderItem
+        keyExtractor={(item, index) => index.toString()}
+        style={{flex: 1}}
+      />
       {isModalVisible && (
         <Modal
           animationType="slide"
@@ -149,16 +147,7 @@ const CustomFlatList_turnieje = ({
           </View>
         </Modal>
       )}
-      {withSearchbar ? renderSearchBar() : null}
-      <FlatList
-        data={flatListData}
-        category={category}
-        renderItem={({item}) => renderItem(item)} //do renderItem przekazujemy wartośc funkcji renderItem
-        keyExtractor={(item, index) => index.toString()}
-        style={{flex: 2}}
-        withSearchbar={true}
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -172,89 +161,31 @@ const mapDispatch = dispatch => ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    justifyContent: 'center',
-    width: '100%',
-    backgroundColor: 'white',
-  },
-  itemContainer: {
-    flexDirection: 'column',
-    flex: 2,
-    justifyContent: 'center',
-    paddingVertical: 5,
-    paddingHorizontal: 5,
-    width: '100%',
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    width: '90%',
-    marginLeft: 4,
-  },
-  nameContainer: {
-    flexBasis: '50%',
-    backgroundColor: '#2a343f',
-    borderRadius: 5,
-    justifyContent: 'center',
-  },
-  imageContainer: {
-    flexBasis: '10%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  buttonJoin: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 30,
-    backgroundColor: '#f8fc05',
-    justifyContent: 'flex-end',
-  },
-  buttonConfirm: {
-    borderRadius: 5,
-    paddingVertical: 1,
-    paddingHorizontal: 1,
-    justifyContent: 'flex-end',
-    elevation: 2,
-    width: 55,
-    backgroundColor: '#32fc05',
-  },
-
-  button: {
+    flex: 1,
     flexDirection: 'row',
-    borderRadius: 10,
-    paddingVertical: -5,
-    paddingHorizontal: -5,
-    elevation: 1,
+    padding: 15,
+    marginVertical: 8,
+    marginHorizontal: -10,
     width: '100%',
     backgroundColor: '#eeedef',
     justifyContent: 'space-between',
   },
 
-  textStyleBig: {
+  text: {
     color: 'black',
-    fontSize: 18,
-
+    fontSize: 16,
+    fontWeight: 'bold',
     textAlign: 'center',
   },
-
-  date: {
-    color: 'black',
-    fontSize: 12,
-    fontWeight: '200',
-    textAlign: 'center',
-  },
-  name: {
-    fontSize: 12,
-    color: 'black',
-    paddingHorizontal: 5,
-    paddingVertical: 20,
+  title: {
+    fontSize: 15,
   },
 
+  image: {
+    height: 20,
+    width: 20,
+    justifyContent: 'flex-end',
+  },
   icon: {
     height: 20,
     width: 20,
@@ -273,6 +204,12 @@ const styles = StyleSheet.create({
       height: 2,
     },
   },
+  textStyleBig: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
   buttonClose: {
     borderRadius: 10,
     paddingVertical: 10,
@@ -288,6 +225,16 @@ const styles = StyleSheet.create({
     //elevation: 2,
     width: 120,
     backgroundColor: '#FCA542',
+  },
+  textButton: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-evenly',
   },
 });
 export default connect(mapState, mapDispatch)(CustomFlatList_turnieje);

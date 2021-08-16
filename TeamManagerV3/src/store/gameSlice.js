@@ -1,6 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 let data = [
-   
+   {
+    gameID: 0,
+    round: 'III Liga Małopolska seniorów 2021',
+    gamePlayerID: 0,
+   }
 ];
 const gameSlice = createSlice({
   name: 'game',

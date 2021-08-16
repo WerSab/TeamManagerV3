@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   View,
+  SafeAreaView,
   Text,
   Image,
   FlatList,
@@ -27,17 +28,8 @@ const CustomFlatList_team = ({
   deleteElement,
   withSearchbar,
 }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const [flatListData, setFlatListData] = useState(data);
-  const [playerListData, setPlayerListData] = useState(data);
   const [searchInputValue, setSearchInputValue] = useState('');
-
-  const deleteAlert = (id, lastName) => {
-    Alert.alert('Delete alert', `Do You want to delete ${lastName}?`, [
-      {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
-      {text: 'Ok', onPress: () => deleteElement(id)},
-    ]);
-  };
 
   const renderSearchBar = () => {
     return (
@@ -67,46 +59,30 @@ const CustomFlatList_team = ({
 
   const renderItem = item => {
     return (
-      <View style={styles.container} key={item.id.toString()}>
+      <View key={item.id.toString()}>
         <TouchableOpacity
-          onPress={() => {
-            setIsModalVisible(true);
-          }}>
-          <Text numberOfLines={1} style={styles.text}>
-            {item.id} {item.firstName} {item.lastName} {item.login}
+          
+          style={[styles.container, {backgroundColor: '#ffffff'}]}>
+          <Text style={styles.text}>
+            ID: {item.id} {item.firstName} {item.lastName}
           </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => deleteAlert(item.id, item.lastName)}
-          style={styles.image}>
-          <Image source={deleteIcon} style={styles.icon} />
         </TouchableOpacity>
       </View>
     );
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* gdybyśmy wyrenderowali to jako ListHeaderComponent to by nam się za każdą literką przeładowywało */}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}
         category={category}
-         // ListHeaderComponent={renderSearchBar || null}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
         style={{flex: 1}}
       />
-
-<FlatList
-        data={game}
-        // ListHeaderComponent={renderSearchBar || null}
-        renderItem={({item}) => renderItem(item)}
-        keyExtractor={(item, index) => index.toString()}
-        style={{flex: 1}}
-      />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -118,9 +94,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    borderRadius: 10,
-    paddingVertical: -5,
-    paddingHorizontal: -5,
+    padding: 15,
+    marginVertical: 8,
+    marginHorizontal: 16,
     width: '100%',
     backgroundColor: '#eeedef',
     justifyContent: 'space-between',
@@ -128,9 +104,12 @@ const styles = StyleSheet.create({
 
   text: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  title: {
+    fontSize: 15,
   },
 
   image: {

@@ -48,7 +48,7 @@ console.log('selectedTab', selectedTab[0])
   const setGameToDB = () => {
     let itemToSet = {
       gameID: game.length,
-      round: selectedTab,
+      round: [selectedTab],
       gamePlayerID: playerID,
     };
     addGame(itemToSet);

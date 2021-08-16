@@ -54,7 +54,7 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'white',
+          backgroundColor: 'black',
         }}>
         {isModalVisible && (
           <Modal
@@ -63,45 +63,62 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
             onRequestClose={() => setIsModalVisible(false)}
             onBackdropPress={() => setIsModalVisible(false)}
             onBackButtonPress={() => setIsModalVisible(false)}>
-            <View style={styles.centeredView}>
+            <View style={styles.mainBody}>
+              <View style={styles.SectionStyle}>
               <Picker
                 selectedValue={selectedValue}
-                style={{height: 50, width: 150}}
+                style={styles.inputStyle}
                 onValueChange={itemValue => setSelectedValue(itemValue)}>
-                <Picker.Item label="Kategoria" value="  " />
-                <Picker.Item label="Turniej" value="turniej" />
-                <Picker.Item label="Liga" value="liga" />
+                <Picker.Item label="Kategoria" color="#8b9cb5" value="  " />
+                <Picker.Item label="Turniej" color="#8b9cb5" value="turniej" />
+                <Picker.Item label="Liga" color="#8b9cb5" value="liga" />
               </Picker>
+              </View>
+              <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.input}
+                style={styles.inputStyle}
                 onChangeText={setDateInput}
                 value={dateInput}
                 placeholder="Termin..."
+                placeholderTextColor="#8b9cb5"
               />
+              </View>
+              <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.input}
+                style={styles.inputStyle}
                 onChangeText={setHourInput}
                 value={hourInput}
                 placeholder="Godzina..."
+                placeholderTextColor="#8b9cb5"
               />
+              </View>
+              <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.input}
+                style={styles.inputStyle}
                 onChangeText={setNameInput}
                 value={nameInput}
                 placeholder="Nazwa..."
+                placeholderTextColor="#8b9cb5"
               />
+              </View>
+              <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.input}
+                style={styles.inputStyle}
                 onChangeText={setCityInput}
                 value={cityInput}
                 placeholder="Miejsce..."
+                placeholderTextColor="#8b9cb5"
               />
+              </View>
+              <View style={styles.SectionStyle}>
               <TextInput
-                style={styles.input}
+                style={styles.inputStyle}
                 onChangeText={setLinkInput}
                 value={linkInput}
                 placeholder="Link do strony..."
+                placeholderTextColor="#8b9cb5"
               />
+              </View>
               <View
                 style={{
                   flexDirection: 'row',
@@ -136,16 +153,12 @@ const Turniej = ({turnieje, addTurniej, navigation}) => {
           borderRadius="20"
           backgroundColor="#212933"
           textColor="white"
-          withSearchbar={true}
+          withSearchbar={false}
         />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
           <Image style={styles.icon} source={moreIcon} />
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={styles.textTeam}> </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => setIsModalVisible(true)}>
@@ -173,40 +186,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#1a112b',
     width: '100%',
   },
-  buttonLogo: {
-    flexDirection: 'row',
-    borderRadius: 10,
-    backgroundColor: '#141518',
-    width: '100%',
-  },
-  buttonWelcome: {
-    flexDirection: 'row',
-    borderRadius: 10,
-    backgroundColor: '#33383C',
-    color: 'white',
-    width: '20%',
-  },
   icon: {
     height: 40,
     width: 40,
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 20,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-    margin: '10%',
-  },
+ 
   button: {
     borderRadius: 10,
     paddingVertical: 10,
@@ -225,28 +209,59 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  textTeam: {
-    color: 'white',
-    fontSize: 15,
-    fontWeight: 'bold',
+
+  mainBody: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#1a112b',
+    alignContent: 'center',
+  },
+  SectionStyle: {
+    flexDirection: 'row',
+    height: 40,
+    marginTop: 20,
+    marginLeft: 35,
+    marginRight: 35,
+    margin: 10,
+  },
+  buttonStyle: {
+    backgroundColor: '#FCA542',
+    borderWidth: 0,
+    color: '#FFFFFF',
+    borderColor: '#7DE24E',
+    height: 40,
+    alignItems: 'center',
+    borderRadius: 30,
+    marginLeft: 35,
+    marginRight: 35,
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  buttonTextStyle: {
+    color: '#FFFFFF',
     paddingVertical: 10,
-    paddingHorizontal: 10,
-    elevation: 2,
+    fontSize: 16,
+  },
+  inputStyle: {
+    flex: 1,
+    color: 'white',
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderWidth: 1,
+    borderRadius: 30,
+    borderColor: '#dadae8',
+  },
+  registerTextStyle: {
+    color: '#FFFFFF',
     textAlign: 'center',
-    letterSpacing: 4,
+    fontWeight: 'bold',
+    fontSize: 14,
+    alignSelf: 'center',
+    padding: 10,
   },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    width: '90%',
-    marginLeft: 4,
-  },
-  picture: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    width: '70%',
-    marginLeft: 4,
+  errorTextStyle: {
+    color: 'red',
+    textAlign: 'center',
+    fontSize: 14,
   },
 });

@@ -5,6 +5,7 @@ import {
   Image,
   FlatList,
   StyleSheet,
+  SafeAreaView,
   TouchableOpacity,
   Linking,
   TextInput,
@@ -15,57 +16,85 @@ import {
 import {connect} from 'react-redux';
 import {gameActions} from '../store';
 import deleteIcon from '../../assets/icons/delete.png/';
-import { round } from 'react-native-reanimated';
 
 const CustomFlatList_games = ({
+  data,
   game,
+  user,
   gamePlayerID,
+  round,
   deleteElement,
   withSearchbar,
 }) => {
-  const [flatListData, setFlatListData] = useState(game);
-  console.log('flatListData - data', flatListData)
-  console.log('game - data', game)
-  console.log('gamePlayerID', gamePlayerID)
-  const deleteAlert = (gameID, name) => {
-    Alert.alert('Delete alert', `Do You want to delete ${name}?`, [
+  const [flatListData, setFlatListData] = useState(data);
+  const [searchInputValue, setSearchInputValue] = useState('');
+
+  const deleteAlert = (gameID, round) => {
+    Alert.alert('Delete alert', `Do You want to delete ${round}?`, [
       {text: 'Cancel', onPress: () => console.log('Cancel Pressed')},
       {text: 'Ok', onPress: () => deleteElement(gameID)},
     ]);
   };
 
-  
+  const renderSearchBar = () => {
+    return (
+      <TextInput
+        inlineImageLeft="search_icon"
+        inlineImagePadding={5}
+        clearButtonMode="while-editing"
+        value={searchInputValue}
+        onChangeText={text => {
+          searchFilterFunction(text);
+        }}
+        placeholder="Wyszukaj..."
+        placeholderTextColor="gray"
+      />
+    );
+  };
+
+  const searchFilterFunction = text => {
+    const newData = data?.filter(item => {
+      const itemData = item.round.toLowerCase().trim();
+      const textData = text.toLowerCase();
+      return itemData.includes(textData);
+    });
+    setSearchInputValue(item);
+    setFlatListData(newData);
+  };
+
   const renderItem = item => {
     return (
-      <View style={styles.container} key={item.gameID.toString()}>
-        <TouchableOpacity>
-          <Text numberOfLines={1} style={styles.text}>
-          {item.gamePlayerID} 
-          {item.round}
-          </Text>
-        </TouchableOpacity>
-        
+      <View key={item.gameID.toString()}>
         <TouchableOpacity
-          onPress={() => deleteAlert(item.gameID, item.round, item.gamePlayerID)}
-          style={styles.image}>
-          <Image source={deleteIcon} style={styles.icon} />
+          style={[styles.container, {backgroundColor: '#ffffff'}]}>
+          <Text style={styles.text}>
+           Player ID: {item.gamePlayerID} {item.round}
+          </Text>
+
+          <TouchableOpacity
+            onPress={() =>
+              deleteAlert(item.gameID, item.round, item.gamePlayerID)
+            }
+            style={styles.image}>
+            <Image source={deleteIcon} style={styles.icon} />
+          </TouchableOpacity>
         </TouchableOpacity>
       </View>
     );
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* gdybyśmy wyrenderowali to jako ListHeaderComponent to by nam się za każdą literką przeładowywało */}
       {withSearchbar ? renderSearchBar() : null}
       <FlatList
         data={flatListData}
-        gamePlayerID={gamePlayerID} 
+        gamePlayerID={gamePlayerID}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={(item, index) => index.toString()}
         style={{flex: 1}}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 const mapState = state => ({
@@ -79,9 +108,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    borderRadius: 10,
-    paddingVertical: -5,
-    paddingHorizontal: -5,
+    padding: 15,
+    marginVertical: 8,
+    marginHorizontal: 16,
     width: '100%',
     backgroundColor: '#eeedef',
     justifyContent: 'space-between',
@@ -89,9 +118,12 @@ const styles = StyleSheet.create({
 
   text: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  title: {
+    fontSize: 15,
   },
 
   image: {

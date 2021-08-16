@@ -10,7 +10,7 @@ import {
 import email from 'react-native-email';
 import {connect} from 'react-redux';
 
-const PasswordRecoveryScreen = user => {
+const PasswordRecoveryScreen = ({user}) => {
   const [errortext, setErrortext] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -34,10 +34,11 @@ const PasswordRecoveryScreen = user => {
     }).catch(console.error);
   };
 
-  const DBpassword = user.filter(item => item.email === userEmail);
-    const {password} = DBpassword[0];
-    console.log('password', password)
-    setUserPassword(password)
+  //const DBpassword = user.filter(item => item.email === userEmail);
+  //const {email} = DBpassword[0];  
+  //const {password} = DBpassword[0];
+    //console.log('password', password)
+    
 
   return (
     <View style={styles.mainBody}>
