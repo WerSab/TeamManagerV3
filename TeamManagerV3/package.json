@@ -13,6 +13,7 @@
     "@react-native-async-storage/async-storage": "^1.15.5",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/toolbar-android": "*",
+    "@react-native-firebase/app": "^12.6.1",
     "@react-native-picker/picker": "^1.16.3",
     "@react-navigation/bottom-tabs": "^5.11.11",
     "@react-navigation/drawer": "^5.12.5",

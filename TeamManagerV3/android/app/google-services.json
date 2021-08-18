@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "257013964658",
+    "project_id": "teammanagerv3-e7524",
+    "storage_bucket": "teammanagerv3-e7524.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257013964658:android:7efad2dbd7c2be887947eb",
+        "android_client_info": {
+          "package_name": "com.teammanagerv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257013964658-u5oupdceh7eirrmaoicnmg9f1edi7ini.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teammanagerv3",
+            "certificate_hash": "f3709fe07ee30286cd55172763cbf6a826b73221"
+          }
+        },
+        {
+          "client_id": "257013964658-j7e6vg11n9lcrjnk62l0bodttm0qtu01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo3UmCcQQ5QlgrIAuJ6MII24FYFVeRgK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257013964658-j7e6vg11n9lcrjnk62l0bodttm0qtu01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
