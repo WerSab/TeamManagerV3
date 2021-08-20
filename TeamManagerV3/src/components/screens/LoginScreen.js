@@ -16,6 +16,9 @@ import PlayerCard from './PlayerCard';
 import {userActions} from '../../store';
 import {loginActions} from '../../store';
 import { set } from 'react-native-reanimated';
+import auth from '@react-native-firebase/app'
+
+console.log(auth);
 
 const LoginScreen = ({navigation, addLogin, user, login}) => {
   const [userEmail, setUserEmail] = useState('');

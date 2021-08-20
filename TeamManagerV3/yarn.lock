@@ -1287,6 +1287,11 @@
     "opencollective-postinstall" "^2.0.1"
     "superstruct" "^0.6.2"
 
+"@react-native-firebase/auth@^12.6.1":
+  "integrity" "sha512-ybZjx/VIcUGi1ouLUzEzi/vXWNR23rt0qeTrivstlNW9rtGU4tpF6gLcedrDysyrK7Ye4DsKeWkKl/X8jBHo4Q=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/auth/-/auth-12.6.1.tgz"
+  "version" "12.6.1"
+
 "@react-native-picker/picker@^1.16.3":
   "integrity" "sha512-Qt40DBg7IEhBN5x2DYPV3B26j5fNhVZcpCestr1IuirneMNtOaIyA9+nPYniL/OBzd9YbpUKbS7XSy/MM9bP3w=="
   "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-1.16.3.tgz"
