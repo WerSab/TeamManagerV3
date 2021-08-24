@@ -1,6 +1,5 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Main from '../Main';
 import Turniej from '../screens/Turniej';
 import Team from '../screens/Team';
 import SplashScreen from '../screens/SplashScreen';

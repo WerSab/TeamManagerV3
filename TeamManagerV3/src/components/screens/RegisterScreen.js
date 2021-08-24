@@ -10,8 +10,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {connect} from 'react-redux';
-import {userActions} from '../../store';
+
 import {Picker} from '@react-native-picker/picker';
 import LoginScreen from './LoginScreen';
 import { StackNavigator } from '../navigation/StackNavigator';
@@ -174,15 +173,8 @@ const RegisterScreen = ({user, addUser, navigation, StackNavigator}) => {
   );
 };
 
-const mapState = state => ({
-  user: state.user,
-});
 
-const mapDispatch = dispatch => ({
-  addUser: data => dispatch(userActions.addUser(data)),
-});
-
-export default connect(mapState, mapDispatch)(RegisterScreen);
+export default RegisterScreen;
 
 const styles = StyleSheet.create({
   SectionStyle: {
